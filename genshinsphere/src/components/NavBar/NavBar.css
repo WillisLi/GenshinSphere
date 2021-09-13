@@ -1,0 +1,38 @@
+.navHeader {
+    background-color: #4B6587;
+    height: 100%;
+    width: 15vw;
+    position: fixed;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navBarItem {
+    padding: 1.5%;
+}
+
+.subMenuDiv {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.0rem;
+}
+
+.dropDownItem {
+    display: flex;
+    flex-direction: row;
+}
+
+.dropDownItem span {
+    margin-left: 5px;
+}

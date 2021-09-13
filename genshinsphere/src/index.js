@@ -5,13 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+import { BrowserRouter } from 'react-router-dom';
 
 // const store = createStore();
+const queryClient = new QueryClient();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <QueryClientProvider client = {queryClient}>
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  </QueryClientProvider>,
   document.getElementById('root')
 );
 

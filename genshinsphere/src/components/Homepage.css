@@ -1,0 +1,14 @@
+.homepage {
+    /* background-color: #F7F6F2; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homePageTest {
+    height: 20vh;
+    width: 50vw;
+    background-color:#F0E5CF;
+    border-radius: 2%;
+}
