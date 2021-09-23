@@ -3,22 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
-import { BrowserRouter } from 'react-router-dom';
-
-// const store = createStore();
-const queryClient = new QueryClient();
+import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
-  <QueryClientProvider client = {queryClient}>
-    <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </React.StrictMode>
-  </QueryClientProvider>,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('root')
 );
 

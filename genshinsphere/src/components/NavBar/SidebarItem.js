@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import './NavBar.css';
 
 const SideBarItem = (props) => {
     const { item } = props;
@@ -13,14 +14,14 @@ const SideBarItem = (props) => {
     return (
         <div className = "navBarItem">
             {item.path ? <NavLink to = {item.path}>
+                {item.icon}
+                <span>{item.title}</span>
+            </NavLink>:
+            <div className = "dropDownItem" onClick = {item.subMenu && displaySubMenu}>
                 <div>
                     {item.icon}
-                    {item.title}
-                </div>
-            </NavLink> :
-            <div className = "dropDownItem" onClick = {item.subMenu && displaySubMenu}>
-                    {item.icon}
                     <span>{item.title}</span>
+                </div>
                     {item.subMenu && subMenu ? item.openIcon : item.subMenu ? item.closedIcon : null}
             </div>}
             <div className = "subMenuDiv">
@@ -31,7 +32,7 @@ const SideBarItem = (props) => {
                     </NavLink>
                 ))}
             </div>
-        </div>
+        </div>  
     );
 }
 

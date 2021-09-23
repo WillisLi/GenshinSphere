@@ -1,6 +1,7 @@
 import React from "react"
-import { BiChevronDown, BiChevronUp, BiHome } from "react-icons/bi";
+import { BiChevronDown, BiChevronUp, BiHome, BiFoodMenu } from "react-icons/bi";
 import { GiSwordArray } from "react-icons/gi";
+import { HiTemplate } from "react-icons/hi";
 import { IoPersonOutline } from "react-icons/io5";
 
 const NavBarData = [
@@ -60,13 +61,13 @@ const NavBarData = [
     {
         title: 'Materials',
         path: '/materials',
-        icon: '',
+        icon: <HiTemplate/>,
     },
 
     {
         title: 'Food',
         path: '/food',
-        icon: '',
+        icon: <BiFoodMenu/>,
     },
 ];
 

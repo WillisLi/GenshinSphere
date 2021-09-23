@@ -1,0 +1,32 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.characterListPage {
+    border: 1px solid black;
+    margin: auto;
+    background: brown;
+    width: 65vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.characterCard {
+    border: 1px solid black;
+    background: yellow;
+}
+
+.characterDetails {
+    display: flex;
+
+}
+
+.characterText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    color: red;
+}

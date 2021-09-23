@@ -1,34 +1,35 @@
 import logo from './logo.svg';
 import { useState, useEffect } from 'react'
 import './App.css';
-import { useQuery } from 'react-query';
+import { QueryClient, QueryClientProvider } from 'react-query'
 import { Switch, Route } from 'react-router-dom';
-import axios from 'axios'
 import Homepage from './components/Homepage';
 import NavBar from './components/NavBar/NavBar';
-// const fetchGenshin = async () => {
-//   const res = await fetch('https://api.genshin.dev/characters');
-//   return res.json();
-// }
+import axios from 'axios';
+import CharactersList from './components/Characters/CharactersList';
+import CharacterPage from './components/Characters/CharacterPage';
+
+const queryClient = new QueryClient()
 
 function App() {
-  // const { data, status } = useQuery('genshin', fetchGenshin);
-  // const [ image, setImage ] = useState('');
   // useEffect(() => {
-  //   axios.get('https://api.genshin.dev/characters/amber')
+  //   axios.get('https://api.genshin.dev/characters/xiao')
   //   .then(response => {
-  //     console.log(response)
-  //     setImage(response.config.url)
+  //     console.log(response.data)
   //   })
   // }, [])
   return (
+    <QueryClientProvider client = {queryClient}>
       <div className = "genshinSphereApp">
         <NavBar/>
 
         <Switch>
-          <Route path = "/" component = {Homepage}/>
+          <Route exact path = "/" component = {Homepage}/>
+          <Route exact path = "/characters" component = {CharactersList}/>
+          <Route path = "/characters/:name" component = {CharacterPage}/>
         </Switch>
       </div>
+    </QueryClientProvider>
   );
 }
 
