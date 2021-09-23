@@ -4,29 +4,32 @@ p {
 }
 
 .characterListPage {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: auto;
-    background: brown;
+    /* background: brown; */
     width: 65vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    justify-content: space-evenly;
 }
 
 .characterCard {
+    margin-top: 3%;
+    width: 25%;
     border: 1px solid black;
-    background: yellow;
+    /* background: yellow; */
 }
 
 .characterDetails {
     display: flex;
-
 }
 
 .characterText {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid black;
-    color: red;
+    padding-left: 7%;
+    /* border: 1px solid black; */
+    color: black;
 }

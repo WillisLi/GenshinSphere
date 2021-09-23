@@ -2,7 +2,6 @@ import React from 'react'
 import { useQuery } from 'react-query';
 import axios from 'axios';
 import CharacterCard from './CharacterCard';
-import CharacterPage from './CharacterPage';
 import './CharactersList.css'
 
 const fetchCharacters = async () => {
