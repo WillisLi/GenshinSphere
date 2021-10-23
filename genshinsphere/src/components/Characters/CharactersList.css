@@ -25,6 +25,12 @@ p {
     display: flex;
 }
 
+.characterDetails img {
+    height: 20vh;
+    padding: 0;
+}
+
+
 .characterText {
     display: flex;
     flex-direction: column;

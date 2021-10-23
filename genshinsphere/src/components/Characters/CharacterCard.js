@@ -4,12 +4,12 @@ import { useQuery, useQueries } from 'react-query';
 import './CharactersList.css'
 import { NavLink } from 'react-router-dom';
 const fetchCharacterData = async (characterName) => {
-    const { data } = await axios.get(`https://api.genshin.dev/characters/${characterName}`)
+    const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/characters/${characterName}`)
     return data;
 }
 
 const fetchCharacterIcon = async (characterName) => {
-    const { config } = await axios.get(`https://api.genshin.dev/characters/${characterName}/icon`)
+    const { config } = await axios.get(`${process.env.REACT_APP_API_URL}/characters/${characterName}/icon`)
     return config;
 }
 

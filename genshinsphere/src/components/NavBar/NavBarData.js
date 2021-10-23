@@ -53,6 +53,36 @@ const NavBarData = [
     },
 
     {
+        title: 'Banners',
+        icon: '',
+        closedIcon: <BiChevronDown/>,
+        openIcon: <BiChevronUp/>,
+        
+        subMenu: [
+            {
+                title: 'History',
+                path: '/banners',
+                icon: '',
+            },
+            {
+                title: '5* Weapon Archive',
+                path: '/banner/5*weapon',
+                icon: '',
+            },
+            {
+                title: '4* Character Archive',
+                path: '/banner/4*char',
+                icon: '',
+            },
+            {
+                title: '4* Weapon Archive',
+                path: '/banner/4*weapon',
+                icon: '',
+            },
+        ]
+    },
+
+    {
         title: 'Artifacts',
         path: '/artifacts',
         icon: '',

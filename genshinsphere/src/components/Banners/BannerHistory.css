@@ -1,0 +1,17 @@
+.bannerHistoryPage {
+    width: 85vw;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border: 5px solid orange;
+}
+
+.bannerHistoryPage div{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}

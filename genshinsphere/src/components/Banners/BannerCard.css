@@ -1,0 +1,10 @@
+.bannerCard {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 3vh 0;
+}
+
+.bannerCard img {
+    width: 30vw;
+}

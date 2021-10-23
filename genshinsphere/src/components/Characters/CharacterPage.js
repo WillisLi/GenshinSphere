@@ -6,12 +6,12 @@ import './CharacterPage.css';
 import logo from '../../logo.svg'
 
 const fetchCharacterData = async (name) => {
-    const { data } = await axios.get(`https://api.genshin.dev/characters/${name}`)
+    const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/characters/${name}`)
     return data;
 }
 
 const fetchCharacterPortrait = async (name) => {
-    const { config } = await axios.get(`https://api.genshin.dev/characters/${name}/portrait`)
+    const { config } = await axios.get(`${process.env.REACT_APP_API_URL}/characters/${name}/portrait`)
     return config;
 }
 

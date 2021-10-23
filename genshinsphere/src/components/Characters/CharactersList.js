@@ -5,7 +5,7 @@ import CharacterCard from './CharacterCard';
 import './CharactersList.css'
 
 const fetchCharacters = async () => {
-    const { data } = await axios.get('https://api.genshin.dev/characters')
+    const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/characters`)
     return data;
 }
 
