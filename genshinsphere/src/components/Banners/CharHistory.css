@@ -1,18 +1,2 @@
 .archivePage {
-    display: flex;
-    justify-content: center;
-    overflow: auto;
-}
-
-.tableContainer {
-    width: 60vw;
-    overflow: auto;
-}
-
-.historyTable {
-    border: 1px solid black;
-}
-
-.historyTable tbody tr{
-    border-bottom: 1px solid black;
 }

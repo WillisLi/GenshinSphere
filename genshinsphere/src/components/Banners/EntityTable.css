@@ -1,0 +1,20 @@
+.tableContainer {
+    width: 86vw;
+    float: right;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.historyTable {
+    border: 1px solid black;
+    width: 70%;
+}
+
+.historyTable tbody tr{
+    border-bottom: 1px solid black;
+}
+
+.historyTable tbody td img{
+    width: 2vw;
+}
