@@ -6,6 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import CharactersList from './components/Characters/CharactersList';
 import CharacterPage from './components/Characters/CharacterPage';
 import BannerHistory from './components/Banners/BannerHistory';
+import CharHistory from './components/Banners/CharHistory';
 
 const queryClient = new QueryClient()
 
@@ -20,6 +21,7 @@ function App() {
           <Route exact path = "/characters" component = {CharactersList}/>
           <Route path = "/characters/:name" component = {CharacterPage}/>
           <Route exact path = "/banners" component = {BannerHistory}/>
+          <Route path = "/banners/4*char" component = {CharHistory}/>
           {/* <Route path = "/banners/:id" component = {BannerHistory}/> */}
         </Switch>
       </div>

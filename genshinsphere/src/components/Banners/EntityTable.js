@@ -1,42 +1,17 @@
-import React from 'react'
+import React from "react";
 import axios from 'axios';
-import { useQuery, useQueries } from 'react-query';
-import { useEffect, useState } from 'react';
-import logo from '../../logo.svg'
-import './CharHistory.css'
+import { useQuery } from 'react-query';
+import './EntityTable.css'
 
-const fetchCharacterBannerHistory = async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/banners/character`)
-    return data;
-}
-
-const fetchCharacterIcon = async (characterName) => {
-    const { config } = await axios.get(`${process.env.REACT_APP_API_URL}/characters/${characterName}/icon`)
+const fetchIcon = async (name, type) => {
+    const { config } = await axios.get(`${process.env.REACT_APP_API_URL}/characters/${name}/icon`)
     return config;
 }
 
-const CharHistory = () => {
-    const { data: characters, status: charStatus, isLoading: charLoading, error: charError } = useQuery('characters', fetchCharacterBannerHistory)
-
-    // const { data: characterIcon, status: iconStatus} = useQuery(['characterIcon', characterName], () => fetchCharacterIcon(characterName), {
-    //     staleTime: 200000,
-    //     enabled: !!
-    // })
-
-    const propList = (data, type) => {
-        let list = []
-        for (let idx = 0; idx < data.length; idx++)  {
-            const propType = data[idx][type]
-            if (Array.isArray(propType)) {
-                for (let index = 0; index < propType.length; index++) 
-                    if (!list.includes(propType[index]))
-                        list.push(propType[index])
-            } else {
-                list.push(propType)
-            }
-        }
-        return list
-    }
+const EntityTable = ({dataSet, type}) => {
+    const { data: icon, status: iconStatus} = useQuery(['icon', dataSet], () => fetchIcon(dataSet, type), {
+        staleTime: 200000,
+    })
 
     const countChar = (data, character) => {
         const countHistory = []
@@ -55,10 +30,9 @@ const CharHistory = () => {
         }
         return countHistory;
     }
-
+    
     return (
-        <div className = "archivePage">
-            <div className = "tableContainer">
+        <div className = "tableContainer">
                 <table className = "historyTable">
                     <thead>
                         <tr>
@@ -82,8 +56,7 @@ const CharHistory = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
     );
 }
 
-export default CharHistory;
+export default EntityTable;
