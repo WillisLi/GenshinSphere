@@ -10,7 +10,7 @@ const fetchCharacterBannerHistory = async () => {
     return data;
 }
 const CharHistory = () => {
-    const { data: characters, status: charStatus, isLoading: charLoading, error: charError } = useQuery('characters', fetchCharacterBannerHistory)
+    const { data: characters, status: charStatus, isLoading: charLoading, error: charError } = useQuery('characters', fetchCharacterBannerHistory, { staleTime: 200000 })
 
     const propList = (data, type) => {
         let list = []

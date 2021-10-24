@@ -7,14 +7,34 @@
 }
 
 .historyTable {
-    border: 1px solid black;
     width: 70%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: #f8f8ff;
+}
+
+.historyTable thead th{
+    border-top: white;
+    border-width: thin;
+    border-style: solid;
+    border-right: gray;
 }
 
 .historyTable tbody tr{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
+}
+
+.historyTable td {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border-width: thin;
+    border-style: solid;
+    border-color: white;
 }
 
 .historyTable tbody td img{
-    width: 2vw;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }

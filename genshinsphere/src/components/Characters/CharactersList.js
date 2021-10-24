@@ -10,7 +10,7 @@ const fetchCharacters = async () => {
 }
 
 const CharactersList = () => {
-    const { data: characters, status, isLoading, error } = useQuery('characters', fetchCharacters)
+    const { data: characters, status, isLoading, error } = useQuery('characters', fetchCharacters, { staleTime: 200000 })
 
     return (
         <div className = "characterListPage">

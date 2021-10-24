@@ -1,7 +1,6 @@
-import React from "react";
+import React, { version } from "react";
 import axios from 'axios';
 import { useQueries, useIsFetching } from 'react-query';
-import { useEffect, useState } from "react";
 import './EntityTable.css'
 
 const fetchIcon = async (name, type) => {
@@ -13,19 +12,32 @@ const EntityTable = ({entityNames, history, versions, type}) => {
     const results = useQueries(entityNames.map(entityName => ({
             queryKey: ["icon", entityName],
             queryFn: () => fetchIcon(entityName.toLowerCase(), type),
+            staleTime: 200000,
     })))
     const isFetching = useIsFetching();
 
     if (isFetching === 0 && results[0].status === "success") {
-        console.log('yay')
         console.log(results)
     }
+
     const getIcon = (resultsData, characterName) => {
         for (let idx = 0; idx < resultsData.length; idx++) {
             if (resultsData[idx].data.includes(characterName)) {
                 return resultsData[idx].data
             }
         }
+    }
+
+    const spanHeader = (versionList) => {
+        const versionData = {}
+        for (let idx = 0; idx < versionList.length; idx++) {
+            if (versionList[idx] in versionData) {
+                versionData[versionList[idx]] += 1
+            } else {
+                versionData[versionList[idx]] = 1;
+            }
+        }
+        return versionData;
     }
 
     const countChar = (data, character) => {
@@ -52,10 +64,8 @@ const EntityTable = ({entityNames, history, versions, type}) => {
                 <thead>
                     <tr>
                         <th>Character</th>
-                        {isFetching === 0 && results[0].status === 'success' && versions.map(versionNum => (
-                        <th>
-                            <td>{versionNum}</td>
-                        </th>
+                        {isFetching === 0 && results[0].status === 'success' && Object.entries(spanHeader(versions)).map(versionNum => (
+                        <th colSpan = {`${versionNum[1]}`}>{versionNum[0]}</th>
                         ))}
                         </tr>
                 </thead>
@@ -64,7 +74,11 @@ const EntityTable = ({entityNames, history, versions, type}) => {
                         <tr>
                             <td>{charName}</td>
                             {isFetching === 0 && results[0].status === 'success' && countChar(history, `${charName}`).map(entityHistory => (
-                                entityHistory === 'featured' ? <td><img src = {getIcon(results, charName.toLowerCase())} alt = {`${charName}`}/></td> : <td>{entityHistory}</td>
+                                entityHistory === 'featured' ? 
+                                <td style = {{background: 'hsl(253, 100%, 74%)'}}><img src = {getIcon(results, charName.toLowerCase())} alt = {`${charName}`}/></td> : 
+                                entityHistory === null ? 
+                                <td style = {{background: '#e5ccff'}}>{entityHistory}</td> : 
+                                <td style = {{background: `hsl(263, 100%, ${35 - (5.5 * entityHistory) + 30}%)`}}>{entityHistory}</td>
                             ))}
                         </tr>
                     ))}
