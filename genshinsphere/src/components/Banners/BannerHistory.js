@@ -16,8 +16,8 @@ const fetchCharacterBannerHistory = async () => {
 }
 
 const BannerHistory = () => {
-    const { data: weapons, status: weapStatus, isLoading: weapLoading, error: weapError } = useQuery('weapons', fetchWeaponBannerHistory)
-    const { data: characters, status: charStatus, isLoading: charLoading, error: charError } = useQuery('characters', fetchCharacterBannerHistory)
+    const { data: weapons, status: weapStatus, isLoading: weapLoading} = useQuery('weapons', fetchWeaponBannerHistory, { staleTime: 200000 })
+    const { data: characters, status: charStatus, isLoading: charLoading} = useQuery('characters', fetchCharacterBannerHistory, { staleTime: 200000 })
 
     if (weapLoading || charLoading) {
         return <div className = "loadingDiv"><img src = {logo} className = "loading" alt = "Loading..." /></div>
