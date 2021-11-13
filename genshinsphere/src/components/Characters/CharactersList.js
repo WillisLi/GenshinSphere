@@ -1,20 +1,14 @@
 import React from 'react'
-import { useQuery } from 'react-query';
-import axios from 'axios';
 import CharacterCard from './CharacterCard';
 import './CharactersList.css'
-
-const fetchCharacters = async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/characters`)
-    return data;
-}
+import useQueryList from '../../hooks/useQueryList';
 
 const CharactersList = () => {
-    const { data: characters, status, isLoading, error } = useQuery('characters', fetchCharacters, { staleTime: 200000 })
+    const { data, status, isLoading, error } = useQueryList('characters')
 
     return (
         <div className = "characterListPage">
-            {status === 'success' && characters.map((character, index) => (
+            {status === 'success' && data.map((character, index) => (
                 <CharacterCard key = {index} characterName = {character}/>
             ))}
         </div>

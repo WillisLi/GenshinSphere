@@ -3,27 +3,27 @@ import axios from 'axios';
 import { useQueries, useIsFetching } from 'react-query';
 import './EntityTable.css'
 
-const fetchIcon = async (name, type) => {
-    const { config } = await axios.get(`${process.env.REACT_APP_API_URL}/${type}/${name}/icon`)
+const fetchIcon = async (name, category) => {
+    const { config } = await axios.get(`${process.env.REACT_APP_API_URL}/${category}/${name}/icon`)
     return config.url;
 }
 
-const EntityTable = ({entityNames, history, versions, type}) => {
+const EntityTable = ({entityNames, history, versions, category, type}) => {
     const results = useQueries(entityNames.map(entityName => ({
             queryKey: ["icon", entityName.replace(/[ /-]/g, '_').replace(/'/g, '').toLowerCase()],
-            queryFn: () => fetchIcon(entityName.replace(/[ /-]/g, '_').replace(/'/g, '').toLowerCase(), type),
+            queryFn: () => fetchIcon(entityName.replace(/[ /-]/g, '_').replace(/'/g, '').toLowerCase(), category),
             staleTime: 200000,
     })))
     const isFetching = useIsFetching();
 
     if (isFetching === 0 && results[0].status === "success") {
-        console.log(results)
+        console.log('success');
     }
 
     const getIcon = (resultsData, entityName) => {
         for (let idx = 0; idx < resultsData.length; idx++) {
             if (resultsData[idx].data.includes(entityName)) {
-                return resultsData[idx].data
+                return resultsData[idx].data;
             }
         }
     }
@@ -40,17 +40,17 @@ const EntityTable = ({entityNames, history, versions, type}) => {
         return versionData;
     }
 
-    const countEntity = (data, entity) => {
+    const countEntity = (data, entity, type) => {
         const countHistory = []
         let count = 0;
         for (let idx = 0; idx < data.length; idx++)  {
-            const { featured } = data[idx]
-            if (!countHistory.includes("featured") && !featured.includes(entity)) {
+            const typeCheck = data[idx][type]
+            if (!countHistory.includes("featured") && !typeCheck.includes(entity)) {
                 countHistory.push(null);
-            } else if (countHistory.includes("featured") && !featured.includes(entity)) {
+            } else if (countHistory.includes("featured") && !typeCheck.includes(entity)) {
                 count += 1;
                 countHistory.push(count)
-            } else if (featured.includes(entity)) {
+            } else if (typeCheck.includes(entity)) {
                 count = 0;
                 countHistory.push('featured');
             }
@@ -63,7 +63,7 @@ const EntityTable = ({entityNames, history, versions, type}) => {
             <table className = "historyTable">
                 <thead>
                     <tr>
-                        <th>{type[0].toUpperCase() + type.slice(1, -1)}</th>
+                        <th>{category[0].toUpperCase() + category.slice(1, -1)}</th>
                         {isFetching === 0 && results[0].status === 'success' && Object.entries(spanHeader(versions)).map(versionNum => (
                         <th key = {versionNum[0]} colSpan = {`${versionNum[1]}`}>{versionNum[0]}</th>
                         ))}
@@ -73,12 +73,12 @@ const EntityTable = ({entityNames, history, versions, type}) => {
                     {isFetching === 0 && results[0].status === 'success' && entityNames.sort().map((entityName, idx) => (
                         <tr key = {idx}>
                             <td key = {entityName}>{entityName}</td>
-                            {isFetching === 0 && results[0].status === 'success' && countEntity(history, `${entityName}`).map((entityHistory, idx) => (
+                            {isFetching === 0 && results[0].status === 'success' && countEntity(history, `${entityName}`, type).map((entityHistory, idx) => (
                                 entityHistory === 'featured' ? 
-                                <td key = {idx} style = {{background: 'hsl(253, 100%, 74%)'}}><img src = {getIcon(results, entityName.replace(/[ /-]/g, '_').replace(/'/g, '').toLowerCase())} alt = {`${entityName}`}/></td> : 
+                                <td key = {idx} style = {type === 'featured' ? {background: 'hsl(253, 100%, 74%)'} : {background: 'hsl(40, 100%, 74%)'}}><img src = {getIcon(results, entityName.replace(/[ /-]/g, '_').replace(/'/g, '').toLowerCase())} alt = {`${entityName}`}/></td> : 
                                 entityHistory === null ? 
-                                <td key = {idx} style = {{background: '#e5ccff'}}>{entityHistory}</td> : 
-                                <td key = {idx} style = {{background: `hsl(263, 100%, ${35 - (5.5 * entityHistory) + 30}%)`}}>{entityHistory}</td>
+                                <td key = {idx} style = {type === 'featured' ? {background: '#e5ccff'} : {background: '#ffe5cc'}}>{entityHistory}</td> : 
+                                <td key = {idx} style = {type === 'featured' ? {background: `hsl(263, 100%, ${35 - (5.5 * entityHistory) + 30}%)`} : {background: `hsl(40, 100%, ${35 - (5.5 * entityHistory) + 30}%)`}}>{entityHistory}</td>
                             ))}
                         </tr>
                     ))}

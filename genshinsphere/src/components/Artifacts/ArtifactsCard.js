@@ -13,7 +13,7 @@ const fetchCharacterIcon = async (characterName) => {
     return config.url;
 }
 
-const CharacterCard = ({index, characterName}) => {
+const ArtifactsCard = ({index, characterName}) => {
     const { data: charData, status: charStatus } = useQuery(['charData', characterName], () => fetchCharacterData(characterName), {
         staleTime: 200000,
     })
@@ -22,7 +22,7 @@ const CharacterCard = ({index, characterName}) => {
     })
 
     return (
-        <div className = "characterCard">
+        <div className = "artifactsCard">
             {charStatus === 'success' && iconStatus === 'success' &&
             <NavLink to = {`/characters/${characterName}`} key = {index}>
             <div className = "characterDetails">
@@ -37,4 +37,4 @@ const CharacterCard = ({index, characterName}) => {
     )
 }
 
-export default CharacterCard;
+export default ArtifactsCard;
