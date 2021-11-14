@@ -1,30 +1,14 @@
 import React from "react";
-import { useQuery } from "react-query";
-import { useParams } from "react-router";
-import axios from "axios";
+import { useParams } from "react-router-dom";
+import useQueryEntityData from '../../hooks/useQueryEntityData';
+import useQueryImage from '../../hooks/useQueryImage';
 import './CharacterPage.css';
 import logo from '../../logo.svg'
 
-const fetchCharacterData = async (name) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/characters/${name}`)
-    return data;
-}
-
-const fetchCharacterPortrait = async (name) => {
-    const { config } = await axios.get(`${process.env.REACT_APP_API_URL}/characters/${name}/portrait`)
-    return config;
-}
-
 const CharacterPage = () => {
     const { name } = useParams();
-    const { data: character, status, isLoading, error } = useQuery(['character', name], () => fetchCharacterData(name), {
-        staleTime: 200000,
-        cacheTimeL: 200000,
-    })
-    const { data: characterPortrait, status: portraitStatus, isLoading: loadingPortrait} = useQuery(['characterPortrait', name], () => fetchCharacterPortrait(name), {
-        staleTime: 200000,
-        cacheTimeL: 200000,
-    })
+    const { data: character, status, isLoading, error } = useQueryEntityData("characters", name);
+    const { data: characterPortrait, status: portraitStatus, isLoading: loadingPortrait} = useQueryImage("characters", name, "portrait")
     console.log(character)
 
     if (isLoading || loadingPortrait) {
@@ -38,7 +22,7 @@ const CharacterPage = () => {
                 <h1>{character.name}</h1>
                 <div className = "details">
                     <div className = "mainImg">
-                        <img src = {characterPortrait.url} alt = "characterPortrait"/>
+                        <img src = {characterPortrait} alt = "characterPortrait"/>
                     </div>
                     <table>
                         <tbody>

@@ -1,19 +1,11 @@
 import React from 'react';
-import axios from 'axios';
-import { useQuery } from 'react-query';
+import useQueryImage from '../../../hooks/useQueryImage';
 import logo from '../../../logo.svg'
 import './BannerCard.css'
 
-const fetchBannerImage = async (type, order) => {
-    const { config } = await axios.get(`${process.env.REACT_APP_API_URL}/banners/${type}/${order}`)
-    return config.url;
-}
-
 const BannerCard = ({type, banner}) => {
     const { date } = banner;
-    const { data, status, isLoading } = useQuery([`${type}-banner`, banner.order], () => fetchBannerImage(type, banner.order), {
-        staleTime: 200000,
-    })
+    const { data, status, isLoading } = useQueryImage("banners", type, `${banner.order}`);
 
     return (
         <div className = "bannerCard">

@@ -1,12 +1,12 @@
 import React from 'react';
-import useQueryBannerList from '../../../hooks/useQueryBannerList';
+import useQueryEntityData from '../../../hooks/useQueryEntityData';
 import BannerCard from './BannerCard';
 import './BannerHistory.css'
 import logo from '../../../logo.svg'
 
 const BannerHistory = () => {
-    const { data: weaponBannerList, status: weapStatus, isLoading: weapLoading} = useQueryBannerList('weapon')
-    const { data: characterBannerList, status: charStatus, isLoading: charLoading} = useQueryBannerList('character')
+    const { data: weaponBannerList, status: weapStatus, isLoading: weapLoading} = useQueryEntityData("banners", "weapon")
+    const { data: characterBannerList, status: charStatus, isLoading: charLoading} = useQueryEntityData("banners", "character")
 
     if (weapLoading || charLoading) {
         return <div className = "loadingDiv"><img src = {logo} className = "loading" alt = "Loading..." /></div>

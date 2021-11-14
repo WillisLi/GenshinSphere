@@ -1,25 +1,12 @@
 import React from 'react';
-import axios from 'axios';
-import { useQuery } from 'react-query';
+import useQueryEntityData from '../../hooks/useQueryEntityData';
+import useQueryImage from '../../hooks/useQueryImage';
 import './CharactersList.css'
 import { NavLink } from 'react-router-dom';
-const fetchCharacterData = async (characterName) => {
-    const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/characters/${characterName}`)
-    return data;
-}
-
-const fetchCharacterIcon = async (characterName) => {
-    const { config } = await axios.get(`${process.env.REACT_APP_API_URL}/characters/${characterName}/icon`)
-    return config.url;
-}
 
 const CharacterCard = ({index, characterName}) => {
-    const { data: charData, status: charStatus } = useQuery(['charData', characterName], () => fetchCharacterData(characterName), {
-        staleTime: 200000,
-    })
-    const { data: icon, status: iconStatus} = useQuery(['icon', characterName], () => fetchCharacterIcon(characterName), {
-        staleTime: 200000,
-    })
+    const { data: charData, status: charStatus } = useQueryEntityData("characters", characterName);
+    const { data: icon, status: iconStatus} = useQueryImage("characters", characterName, "icon");
 
     return (
         <div className = "characterCard">

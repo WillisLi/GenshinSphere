@@ -1,11 +1,11 @@
 import React from 'react'
-import useQueryBannerList from '../../../hooks/useQueryBannerList';
+import useQueryEntityData from '../../../hooks/useQueryEntityData';
 import logo from '../../../logo.svg'
 import './ArchiveHistory.css'
 import EntityTable from './EntityTable';
 
 const ArchiveHistory = ({cat, type}) => {
-    const { data, status, isLoading, error} = useQueryBannerList(cat)
+    const { data, status, isLoading, error} = useQueryEntityData("banners", cat)
 
     const propList = (data, type) => {
         let list = []
