@@ -6,9 +6,12 @@ import { NavLink } from 'react-router-dom';
 
 const ArtifactsCard = ({index, artifactName}) => {
     const { data: artifactData, status: artifactStatus } = useQueryEntityData("artifacts", artifactName);
-    const { data: icon, status: iconStatus} = useQueryImage("artifacts", artifactName, "flower");
-    console.log(artifactData)
+    const { data: icon, status: iconStatus} = useQueryImage("artifacts", artifactName, !artifactName.includes("prayers_for_") ? "flower" : "circlet");
     
+    if (artifactStatus === "success" && iconStatus === "success") {
+        console.log(artifactData)
+    }
+
     return (
         <div className = "artifactsCard">
             {artifactStatus === 'success' && iconStatus === 'success' &&

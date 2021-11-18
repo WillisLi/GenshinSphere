@@ -28,6 +28,7 @@ function App() {
         <Routes>
           <Route exact path = "/" element = {<Homepage />}/>
           <Route exact path = "/artifacts" element = {<ArtifactsList />}/>
+          {/* <Route path = "/artifacts/:name" element = {<ArtifactsPage />}/> */}
           <Route exact path = "/characters" element = {<CharactersList />}/>
           <Route path = "/characters/:name" element = {<CharacterPage />}/>
           <Route path = "/weapons/polearm" element = {<PolearmPage />}/>
