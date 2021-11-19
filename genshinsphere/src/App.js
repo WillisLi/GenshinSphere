@@ -8,7 +8,9 @@ import CharacterPage from './components/Characters/CharacterPage';
 import ArtifactsList from './components/Artifacts/ArtifactsList';
 import BannerHistory from './components/Banners/History/BannerHistory';
 import ArchiveHistory from './components/Banners/EntityArchive/ArchiveHistory';
-import PolearmPage from './components/Weapons/PolearmPage';
+import ArtifactsPage from './components/Artifacts/ArtifactsPage';
+import WeaponList from './components/Weapons/WeaponList';
+import Maintenance from './components/Maintenance/Maintenance';
 
 const queryClient = new QueryClient();
 
@@ -28,14 +30,16 @@ function App() {
         <Routes>
           <Route exact path = "/" element = {<Homepage />}/>
           <Route exact path = "/artifacts" element = {<ArtifactsList />}/>
-          {/* <Route path = "/artifacts/:name" element = {<ArtifactsPage />}/> */}
+          <Route path = "/artifacts/:name" element = {<ArtifactsPage />}/>
           <Route exact path = "/characters" element = {<CharactersList />}/>
           <Route path = "/characters/:name" element = {<CharacterPage />}/>
-          <Route path = "/weapons/polearm" element = {<PolearmPage />}/>
+          <Route exact path = "/weapons" element = {<WeaponList />}/>
           <Route exact path = "/banners" element = {<BannerHistory />}/>
           <Route path = "/banners/4*char" element = {<ArchiveHistory cat = {"character"} type = {"featured"}/>}/>
           <Route path = "/banners/4*weapon" element = {<ArchiveHistory cat = {"weapon"} type = {"featured"}/>}/>
           <Route path = "/banners/5*weapon" element = {<ArchiveHistory cat = {"weapon"} type = {"limited"}/>}/>
+          <Route exact path = "/food" element = {<Maintenance />}/>
+          <Route exact path = "/materials" element = {<Maintenance />}/>
         </Routes>
       </div>
     </QueryClientProvider>

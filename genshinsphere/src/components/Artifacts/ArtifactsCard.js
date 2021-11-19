@@ -1,7 +1,6 @@
 import React from 'react';
 import useQueryEntityData from '../../hooks/useQueryEntityData';
 import useQueryImage from '../../hooks/useQueryImage';
-// import './CharactersList.css'
 import { NavLink } from 'react-router-dom';
 
 const ArtifactsCard = ({index, artifactName}) => {
@@ -18,9 +17,7 @@ const ArtifactsCard = ({index, artifactName}) => {
             <NavLink to = {`/artifacts/${artifactName}`} key = {index}>
             <div className = "artifactDetails">
                 <img src = {icon} alt = "artifactIcon"/>
-                <div className = "artifactText">
-                    <p>{artifactData.name}</p>
-                </div>
+                <p>{artifactData.name}</p>
             </div></NavLink>}
         </div>
     )

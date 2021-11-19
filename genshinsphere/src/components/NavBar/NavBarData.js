@@ -19,37 +19,8 @@ const NavBarData = [
 
     {
         title: 'Weapons',
+        path: '/weapons',
         icon: <GiSwordArray/>,
-        closedIcon: <BiChevronDown/>,
-        openIcon: <BiChevronUp/>,
-
-        subMenu: [
-            {
-                title: 'Sword',
-                path: '/weapons/sword',
-                icon: '',
-            },
-            {
-                title: 'Claymore',
-                path: '/weapons/claymore',
-                icon: '',
-            },
-            {
-                title: 'Bow',
-                path: '/weapons/bow',
-                icon: '',
-            },
-            {
-                title: 'Catalyst',
-                path: '/weapons/catalyst',
-                icon: '',
-            },
-            {
-                title: 'Polearm',
-                path: '/weapons/polearm',
-                icon: '',
-            },
-        ]
     },
 
     {

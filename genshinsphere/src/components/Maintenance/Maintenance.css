@@ -1,0 +1,17 @@
+.maintenancePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.maintenancePage img {
+    width: 15%;
+}
+
+.maintenancePage p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
