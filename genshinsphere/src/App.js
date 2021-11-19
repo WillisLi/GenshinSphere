@@ -10,6 +10,7 @@ import BannerHistory from './components/Banners/History/BannerHistory';
 import ArchiveHistory from './components/Banners/EntityArchive/ArchiveHistory';
 import ArtifactsPage from './components/Artifacts/ArtifactsPage';
 import WeaponList from './components/Weapons/WeaponList';
+import WeaponPage from './components/Weapons/WeaponPage';
 import Maintenance from './components/Maintenance/Maintenance';
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ function App() {
           <Route exact path = "/characters" element = {<CharactersList />}/>
           <Route path = "/characters/:name" element = {<CharacterPage />}/>
           <Route exact path = "/weapons" element = {<WeaponList />}/>
+          <Route path = "/weapons/:name" element = {<WeaponPage />}/>
           <Route exact path = "/banners" element = {<BannerHistory />}/>
           <Route path = "/banners/4*char" element = {<ArchiveHistory cat = {"character"} type = {"featured"}/>}/>
           <Route path = "/banners/4*weapon" element = {<ArchiveHistory cat = {"weapon"} type = {"featured"}/>}/>

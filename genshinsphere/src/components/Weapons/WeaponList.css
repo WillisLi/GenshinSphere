@@ -1,0 +1,17 @@
+.weaponListPage {
+    width: 65vw;
+    border: 1px solid black;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.weaponListPage img {
+    width: 8vw;
+}
+
+.weaponListPage p {
+    color: black;
+    margin: 0% 1%;
+}

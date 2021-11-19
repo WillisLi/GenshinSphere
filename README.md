@@ -10,10 +10,11 @@ This is an open-source database for mobile game, Genshin Impact. The main purpos
 - [x] Create page for past character and weapon banner occurrences to check for patterns
 - [x] Implement Twitter into homepage
 - [x] Deploy app
-- [ ] Create weapon list page
-- [ ] Create weapon detail page
-- [ ] Create artifact List Page - in progress
-- [ ] Create artifact details page - in progress
+- [x] Create weapon list page
+- [x] Create weapon detail page
+- [x] Create artifact List Page
+- [x] Create artifact details page
+- [ ] Consolidate all common entity pages to one component
 - [ ] Decide what other features the current components need
 - [ ] Make stuff look pretty - in queue
 
