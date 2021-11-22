@@ -14,6 +14,9 @@ This is an open-source database for mobile game, Genshin Impact. The main purpos
 - [x] Create weapon detail page
 - [x] Create artifact List Page
 - [x] Create artifact details page
+- [ ] Calendar for upcoming character birthdays
+- [ ] shop rotation data
+- [ ] current available domains today
 - [ ] Consolidate all common entity pages to one component
 - [ ] Decide what other features the current components need
 - [ ] Make stuff look pretty - in queue
@@ -23,4 +26,5 @@ This is an open-source database for mobile game, Genshin Impact. The main purpos
 - [ ] Materials pages
 - [ ] Find some useful resources to put on nav bar
 - [ ] Navbar animation
+- [ ] Searchbar
 - [ ] Get ideas for more unique pages

@@ -5,21 +5,19 @@ import './Homepage.css'
 const Homepage = () => {
     return (
         <div className = "homepage">
-            <div className = "homePageTest">
-                <div className="twitter-embed">
-                    <TwitterTimelineEmbed
-                        sourceType="profile"
-                        screenName="GenshinImpact"
-                        options = {{
-                            tweetLimit: "15",
-                            width: "90%",
-                            height: "100%"
-                        }}
-                        noHeader="true"
-                        noBorders="true"
-                        noFooter="true"
-                    ></TwitterTimelineEmbed>
-                </div>
+            <div className="twitter-embed">
+                <p>Check out the official Twitter!</p>
+                <TwitterTimelineEmbed
+                    sourceType="profile"
+                    screenName="GenshinImpact"
+                    options = {{
+                        height: "410"
+                    }}
+                    noHeader={true}
+                    noBorders={true}
+                    noFooter={true}
+                    noScrollbar={true}
+                ></TwitterTimelineEmbed>
             </div>
         </div>
     )
