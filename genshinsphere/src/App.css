@@ -30,4 +30,6 @@
 .genshinSphereApp {
   background-image: url("../src/images/background.png");
   overflow: hidden;
+  /* background-repeat: no-repeat;
+  background-attachment: fixed; */
 }

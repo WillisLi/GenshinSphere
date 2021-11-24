@@ -1,7 +1,7 @@
 import './App.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Routes, Route } from 'react-router-dom';
-import Homepage from './components/Homepage';
+import Homepage from './components/HomePage/Homepage';
 import NavBar from './components/NavBar/NavBar';
 import CharactersList from './components/Characters/CharactersList';
 import CharacterPage from './components/Characters/CharacterPage';
@@ -12,6 +12,7 @@ import ArtifactsPage from './components/Artifacts/ArtifactsPage';
 import WeaponList from './components/Weapons/WeaponList';
 import WeaponPage from './components/Weapons/WeaponPage';
 import Maintenance from './components/Maintenance/Maintenance';
+import Footer from './components/Footer/Footer';
 
 const queryClient = new QueryClient();
 
@@ -27,7 +28,7 @@ function App() {
     <QueryClientProvider client = {queryClient}>
       <div className = "genshinSphereApp">
         <NavBar/>
-
+        
         <Routes>
           <Route exact path = "/" element = {<Homepage />}/>
           <Route exact path = "/artifacts" element = {<ArtifactsList />}/>
@@ -44,6 +45,7 @@ function App() {
           <Route exact path = "/materials" element = {<Maintenance />}/>
         </Routes>
       </div>
+      <Footer />
     </QueryClientProvider>
   );
 }

@@ -1,0 +1,41 @@
+.footer {
+    width: 86vw;
+    background-color: rgba(240,229,207, 0.4);
+    box-shadow: .2rem .2rem 1rem grey;
+    float: right;
+    bottom: 0;
+    left: 0;
+    padding: 1% 0;
+}
+
+hr {
+    border-top: 2px solid rgb(112, 93, 93);
+    width: 90%;
+}
+
+.footer p {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.official-links {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.link-wrapper {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer div {
+    margin: 0 auto;
+}
+
+.github {
+    margin: 0.5%;
+    display: flex;
+    flex-direction: column;
+}

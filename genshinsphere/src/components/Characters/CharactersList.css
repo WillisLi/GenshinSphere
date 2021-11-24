@@ -12,6 +12,7 @@ p {
     flex-wrap: wrap;
     justify-content: center;
     justify-content: space-evenly;
+    padding-bottom: 5%;
 }
 
 .characterCard {
