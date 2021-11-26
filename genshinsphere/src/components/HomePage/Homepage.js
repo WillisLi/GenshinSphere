@@ -31,9 +31,9 @@ const Homepage = () => {
             </div>
             <div className = 'youtube-embed'>
                 <p>Check out the latest Youtube Videos!</p>
+                <iframe src="https://www.youtube.com/embed/PUYloYPB9Go" title = "Eula's Story - EP"></iframe>
                 <iframe src="https://www.youtube.com/embed/GU3M6wtfrCY" title = "Albedo's Story - EP"></iframe>
                 <iframe src="https://www.youtube.com/embed/sgAvJlOL0Gg" title = "Version 2.3 Announcement"></iframe>
-                <iframe src="https://www.youtube.com/embed/CXYGOpcNNSQ" title = "Version 2.3 Trailer"></iframe>
             </div>
         </div>
     )

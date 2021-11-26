@@ -1,6 +1,7 @@
 import './App.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Homepage from './components/HomePage/Homepage';
 import NavBar from './components/NavBar/NavBar';
 import CharactersList from './components/Characters/CharactersList';
@@ -24,6 +25,12 @@ const types = [
 ]
 
 function App() {
+  const location = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [location]);
+
   return (
     <QueryClientProvider client = {queryClient}>
       <div className = "genshinSphereApp">

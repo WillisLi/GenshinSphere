@@ -3,7 +3,7 @@ import useQueryEntityData from '../../hooks/useQueryEntityData';
 import useQueryImage from '../../hooks/useQueryImage';
 import { NavLink } from 'react-router-dom';
 
-const WeaponCard = ({index, weaponName}) => {
+const WeaponCard = ({index, weaponName, filterType}) => {
     const { data: weaponData, status: weaponStatus } = useQueryEntityData("weapons", weaponName);
     const { data: icon, status: iconStatus} = useQueryImage("weapons", weaponName, "icon");
     
@@ -12,14 +12,16 @@ const WeaponCard = ({index, weaponName}) => {
     }
 
     return (
-        <div className = "weaponCard">
-            {weaponStatus === 'success' && iconStatus === 'success' &&
+        <>
+        {weaponStatus === 'success' && weaponData.type === `${filterType}` && <div className = "weaponCard">
+            {iconStatus === 'success' &&
             <NavLink to = {`/weapons/${weaponName}`} key = {index}>
             <div className = "weaponDetails">
                 <img src = {icon} alt = "weaponIcon"/>
                 <p>{weaponData.name}</p>
             </div></NavLink>}
-        </div>
+        </div>}
+        </>
     )
 }
 

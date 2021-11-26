@@ -1,4 +1,10 @@
 .weaponListPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weaponList {
     width: 65vw;
     border: 1px solid black;
     margin: auto;
@@ -14,4 +20,8 @@
 .weaponListPage p {
     color: black;
     margin: 0% 1%;
+}
+
+.filter-tabs {
+
 }

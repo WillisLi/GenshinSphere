@@ -15,6 +15,7 @@ This is an open-source database for mobile game, Genshin Impact. The main purpos
 - [x] Create artifact List Page
 - [x] Create artifact details page
 - [x] Add Footer
+- [x] Add filter tabs to weapon page
 - [ ] Calendar for upcoming character birthdays
 - [ ] shop rotation data
 - [ ] find a better font
