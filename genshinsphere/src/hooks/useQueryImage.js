@@ -7,5 +7,5 @@ const fetchImage = async (category, name, type) => {
 }
 
 export default function useQueryImage(cat, name, type) {
-    return useQuery([`${type}`, name], () => fetchImage(cat, name, type), { staleTime: 2000000, cacheTime: 2000000 })
+    return useQuery([`${type}`, name], () => fetchImage(cat, name, type), { staleTime: 2000000, cacheTime: 2000000, enabled: !!name})
 }

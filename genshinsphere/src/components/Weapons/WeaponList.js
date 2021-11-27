@@ -1,8 +1,9 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useQueryList from "../../hooks/useQueryList";
 import WeaponCard from "./WeaponCard";
 import './WeaponList.css';
+import logo from '../../logo.svg';
 
 const types = [
     "Sword",
@@ -19,6 +20,10 @@ const WeaponList = () => {
     const filterWeapons = event => {
         const type = event.target.innerText;
         setFilterType(`${type}`)
+    }
+
+    if (isLoading) {
+        return <div className = "loadingDiv"><img src = {logo} className = "loading" alt = "Loading..." /></div>
     }
 
     return (

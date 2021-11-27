@@ -1,0 +1,23 @@
+.weaponPage {
+    display: flex;
+    justify-content: center;
+    border: 5px solid orange;
+}
+
+/* .details {
+    display: flex;
+    justify-content: flex-end;
+} */
+
+.mainImg {
+    width: 30%;
+}
+
+.mainImg img {
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+table {
+    border: 1px solid black;
+}

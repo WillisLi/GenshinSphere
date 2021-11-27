@@ -32,7 +32,7 @@ const CharacterPage = () => {
                             </tr>
                             <tr>
                                 <th>Rarity</th>
-                                <td>{character.rarity} Star</td>
+                                <td>{"★".repeat(character.rarity)}</td>
                             </tr>
                             <tr>
                                 <th>Birthday</th>

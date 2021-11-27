@@ -17,7 +17,7 @@ const WeaponCard = ({index, weaponName, filterType}) => {
             {iconStatus === 'success' &&
             <NavLink to = {`/weapons/${weaponName}`} key = {index}>
             <div className = "weaponDetails">
-                <img src = {icon} alt = "weaponIcon"/>
+                <img style = {weaponData.rarity === 4 ? {background: 'hsl(253, 100%, 84%)'} : {background: 'hsl(40, 100%, 66%)'}} src = {icon} alt = "weaponIcon"/>
                 <p>{weaponData.name}</p>
             </div></NavLink>}
         </div>}

@@ -25,8 +25,8 @@ This is an open-source database for mobile game, Genshin Impact. The main purpos
 - [ ] Make stuff look pretty - in queue
 
 # Plans for the future
-- [ ] Foods pages
-- [ ] Materials pages
+- [ ] Foods pages (priority 2 - will also be long)
+- [ ] Materials pages (priority 1 - will be a long while)
 - [ ] Find some useful resources to put on nav bar
 - [ ] Navbar animation
 - [ ] Searchbar/top bar

@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import useQueryEntityData from '../../hooks/useQueryEntityData';
 import useQueryImage from '../../hooks/useQueryImage';
+import './WeaponPage.css'
 import logo from '../../logo.svg'
 
 const WeaponPage = () => {
@@ -18,27 +19,43 @@ const WeaponPage = () => {
     }
 
     return (
-        <div>
+        <div className = "weaponPage">
             {status === "success" && iconStatus === "success" &&
             <div className = "characterHeader">
             <h1>{weapon.name}</h1>
             <div className = "details">
                 <div className = "mainImg">
-                    <img src = {icon} alt = "weaponIcon"/>
+                    <img style = {weapon.rarity === 4 ? {background: 'hsl(253, 100%, 84%)'} : {background: 'hsl(40, 100%, 66%)'}} src = {icon} alt = "weaponIcon"/>
                 </div>
                 <table>
                     <tbody>
                         <tr>
                             <th>Rarity</th>
-                            <td>{weapon.rarity} Star</td>
+                            <td>{"★".repeat(weapon.rarity)}</td>
+                        </tr>
+                        <tr>
+                            <th>Base Attack</th>
+                            <td>{weapon.baseAttack}</td>
                         </tr>
                         <tr>
                             <th>Main Stat</th>
-                            <td>{weapon.ascensionStat + "%"}</td>
+                            <td>{weapon.ascensionStat + " %"}</td>
+                        </tr>
+                        <tr>
+                            <th>{weapon.ascensionStat}</th>
+                            <td>{weapon.ascensionStatValue + "%"}</td>
                         </tr>
                         <tr>
                             <th>Passive</th>
                             <td>{weapon.passive}</td>
+                        </tr>
+                        <tr>
+                            <th>Passive Description</th>
+                            <td>{weapon.passiveDesc}</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>{weapon.description}</td>
                         </tr>
                     </tbody>
                 </table>
