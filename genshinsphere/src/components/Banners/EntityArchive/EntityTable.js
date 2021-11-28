@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import { useQueries, useIsFetching } from 'react-query';
+import { parseString } from "../../../utils/utils";
 import './EntityTable.css'
 
 const fetchIcon = async (name, category) => {
@@ -10,8 +11,8 @@ const fetchIcon = async (name, category) => {
 
 const EntityTable = ({entityNames, history, versions, category, type}) => {
     const results = useQueries(entityNames.map(entityName => ({
-            queryKey: ["icon", entityName.replace(/[ /-]/g, '_').replace(/'/g, '').toLowerCase()],
-            queryFn: () => fetchIcon(entityName.replace(/[ /-]/g, '_').replace(/'/g, '').toLowerCase(), category),
+            queryKey: ["icon", parseString(entityName)],
+            queryFn: () => fetchIcon(parseString(entityName), category),
             staleTime: 200000,
     })))
     const isFetching = useIsFetching();
@@ -75,7 +76,7 @@ const EntityTable = ({entityNames, history, versions, category, type}) => {
                             <td key = {entityName}>{entityName}</td>
                             {isFetching === 0 && results[0].status === 'success' && countEntity(history, `${entityName}`, type).map((entityHistory, idx) => (
                                 entityHistory === 'featured' ? 
-                                <td key = {idx} style = {type === 'featured' ? {background: 'hsl(253, 100%, 74%)'} : {background: 'hsl(40, 100%, 74%)'}}><img src = {getIcon(results, entityName.replace(/[ /-]/g, '_').replace(/'/g, '').toLowerCase())} alt = {`${entityName}`}/></td> : 
+                                <td key = {idx} style = {type === 'featured' ? {background: 'hsl(253, 100%, 74%)'} : {background: 'hsl(40, 100%, 74%)'}}><img src = {getIcon(results, parseString(entityName))} alt = {`${entityName}`}/></td> : 
                                 entityHistory === null ? 
                                 <td key = {idx} style = {type === 'featured' ? {background: '#e5ccff'} : {background: '#ffe5cc'}}>{entityHistory}</td> : 
                                 <td key = {idx} style = {type === 'featured' ? {background: `hsl(263, 100%, ${35 - (5.5 * entityHistory) + 30}%)`} : {background: `hsl(40, 100%, ${35 - (5.5 * entityHistory) + 30}%)`}}>{entityHistory}</td>
