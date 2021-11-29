@@ -17,8 +17,8 @@ This is an open-source database for mobile game, Genshin Impact. The main purpos
 - [x] Add Footer
 - [x] Add filter tabs to weapon page
 - [x] shop rotation data
+- [x] find a better font
 - [ ] Calendar for upcoming character birthdays
-- [ ] find a better font
 - [ ] current available domains today
 - [ ] Consolidate all common entity pages to one component
 - [ ] Decide what other features the current components need

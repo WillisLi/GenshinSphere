@@ -27,7 +27,7 @@ a {
 .subMenuDiv {
     display: flex;
     flex-direction: column;
-    font-size: 1.0rem;
+    font-size: 0.9rem;
 }
 
 .dropDownItem {

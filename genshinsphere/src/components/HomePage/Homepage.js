@@ -5,6 +5,7 @@ import { TwitterTimelineEmbed } from "react-twitter-embed";
 import ShopGraphic from './ShopGraphic';
 import './Homepage.css'
 import moment from 'moment';
+import hehe from '../../static/images/hehe.png';
 
 const Homepage = () => {
     const { data: shopData, status, isLoading } = useQueryEntityData('shop', 'starglitter_exchange')
@@ -22,26 +23,26 @@ const Homepage = () => {
             <p className = "timer">{"Daily Reset: " + time}</p>
             <div className = "mainContent">
                 <div className = "info">
-                {status === 'success' && <div className = "shopSection">
-                    <p>{currentMonth}'s Shop Rotation!</p>
-                    {shopData.rotation.map((correct, index) => (
-                        <React.Fragment key = {index}>
-                            {correct.month.includes(currentMonth) && <div>
-                                <div className = "currentItems">{correct.characters.map((character, index) => (
-                                    <ShopGraphic index = {index} type = "characters" name = {character}/>
-                                ))}</div>
-                                <div className = "currentItems">{correct.weapons.map((weapon, index) => (
-                                    <ShopGraphic index = {index} type = "weapons" name = {weapon}/>
-                                ))}
-                                </div>
-                            </div>}
-                        </React.Fragment>
-                    ))}
-                </div>}
+                    {status === 'success' && <div className = "shopSection">
+                        <p className = "shopHeader">{currentMonth}'s Shop Rotation!</p>
+                        {shopData.rotation.map((correct, index) => (
+                            <React.Fragment key = {index}>
+                                {correct.month.includes(currentMonth) && <div>
+                                    <div className = "currentItems">{correct.characters.map((character, index) => (
+                                        <ShopGraphic index = {index} type = "characters" name = {character}/>
+                                    ))}</div>
+                                    <div className = "currentItems">{correct.weapons.map((weapon, index) => (
+                                        <ShopGraphic index = {index} type = "weapons" name = {weapon}/>
+                                    ))}
+                                    </div>
+                                </div>}
+                            </React.Fragment>
+                        ))}
+                    </div>}
                 </div>
                 <div className = "embeds">
                     <div className = "twitter-embed">
-                        <p>Check out the official Twitter!</p>
+                        <p className = "twitter-header">Check out the official Twitter! <img src = {hehe} alt = "paimonHehe" /></p>
                         <TwitterTimelineEmbed
                             sourceType="profile"
                             screenName="GenshinImpact"

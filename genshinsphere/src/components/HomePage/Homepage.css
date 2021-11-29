@@ -1,3 +1,7 @@
+p {
+    color: black;
+}
+
 .homepage {
     width: 85vw;
     float: right;
@@ -43,9 +47,9 @@
     flex-direction: column;
 }
 
-.shopSection p {
+.shopHeader {
     text-align: center;
-    color: black;
+    padding: 2%;
 }
 
 /*Shop Item Rows*/
@@ -71,9 +75,11 @@
 
 .currentItems p {
     font-size: 0.7rem;
+    font-family: 'Poppins';
+    text-align: center;
 }
 
- /*Twitter Embed*/
+ /*Twitter Embeds*/
 .twitter-embed {
     height: 65vh;
     width: 20vw;
@@ -92,11 +98,17 @@
     width: 100%;
 }
 
-.twitter-embed p {
+.twitter-header {
     width: 100%;
+    padding: 1% 0 2.5%;
+    font-size: 0.9rem;
     text-align: center;
 }
 
+.twitter-header img {
+    width: 2vw;
+    vertical-align: text-bottom;
+}
 
  /*Youtube Section*/
 .youtube-embed {
@@ -130,5 +142,4 @@
 .timer {
     float: right;
     font-size: 1.6rem;
-    font-weight: bold;
 }

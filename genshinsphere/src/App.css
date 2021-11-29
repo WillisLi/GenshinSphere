@@ -1,9 +1,19 @@
+@font-face {
+  font-family: 'gs_font';
+  src:  url('./static/fonts/font.woff2') format('woff2'),
+        url('./static/fonts/font.woff') format('woff'),
+        url('./static/fonts/font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .App {
   text-align: center;
 }
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'gs_font', 'Poppins', sans-serif;
 }
 
 .loading {
@@ -28,7 +38,7 @@
 }
 
 .genshinSphereApp {
-  background-image: url("../src/images/background.png");
+  background-image: url("../src/static/images/background.png");
   overflow: hidden;
   /* background-repeat: no-repeat;
   background-attachment: fixed; */
