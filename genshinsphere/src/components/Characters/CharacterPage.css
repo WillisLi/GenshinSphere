@@ -69,3 +69,7 @@ h1 {
 .characterHeader table tbody td {
     padding-left: 5%;
 }
+
+.characterBody {
+    width: 50vw;
+}
