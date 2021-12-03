@@ -93,6 +93,16 @@ const CharacterPage = () => {
                         </div>
                     ))}
                 </div>
+                <div className = "constellations">
+                    <h2>Constellations</h2>
+                    {status === "success" && character.constellations.map((constellation, index) => (
+                        <div key = {index} className = "constellation">
+                            <h3>{constellation.title}</h3>
+                            <p style = {{margin: "2% 1%"}}>{constellation.unlock}</p>
+                            <p style={{whiteSpace: "pre-line"}}>{constellation.description}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )

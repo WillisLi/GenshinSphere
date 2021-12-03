@@ -18,6 +18,8 @@ This is an open-source database for mobile game, Genshin Impact. The main purpos
 - [x] Add filter tabs to weapon page
 - [x] shop rotation data
 - [x] find a better font
+- [ ] add global top bar with search bar and timer
+- [ ] section character data with tabs
 - [ ] Calendar for upcoming character birthdays
 - [ ] current available domains today
 - [ ] Consolidate all common entity pages to one component
@@ -29,5 +31,4 @@ This is an open-source database for mobile game, Genshin Impact. The main purpos
 - [ ] Materials pages (priority 1 - will be a long while)
 - [ ] Find some useful resources to put on nav bar
 - [ ] Navbar animation
-- [ ] Searchbar/top bar
 - [ ] Get ideas for more unique pages
