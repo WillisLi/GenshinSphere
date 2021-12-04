@@ -9,7 +9,8 @@ p {
     flex-direction: column;
     align-items: flex-end;
     overflow: hidden;
-    padding-bottom: 5%;
+    padding: 5% 0;
+    pointer-events:auto;
     /* border: 5px solid orange; */
 }
 
@@ -135,11 +136,4 @@ p {
     margin: 4% 0%;
     font-weight: 500;
     font-size: 1.8rem;
-}
-
-
- /*Daily Reset Clock*/
-.timer {
-    float: right;
-    font-size: 1.6rem;
 }

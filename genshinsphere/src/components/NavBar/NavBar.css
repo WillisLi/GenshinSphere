@@ -2,8 +2,9 @@
     background-color: rgba(75,101,135, 1);
     height: 100%;
     width: 14.5vw;
-    position: fixed;
     box-shadow: .2rem .2rem 1rem grey;
+    opacity: 90%;
+    pointer-events: auto; 
 }
 
 .navBar {

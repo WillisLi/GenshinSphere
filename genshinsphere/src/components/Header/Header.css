@@ -1,0 +1,45 @@
+/*Header*/
+.header {
+    background-color: #34465e;
+    box-shadow: .2rem .2rem 1rem grey;
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    pointer-events: auto; 
+}
+
+/*Logo*/
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo p {
+    color: white;
+    margin: 1.5%;
+}
+
+/*SearchBar*/
+.searchBar {
+
+}
+
+.searchBar input{
+    width: 55vw;
+    height: 4vh;
+}
+
+/*Daily Reset Clock*/
+.timer {
+    color: white;
+    font-size: 1.2rem;
+    float: right;
+}

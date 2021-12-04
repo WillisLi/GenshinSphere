@@ -27,7 +27,6 @@
   }
 }
 
-/* F0FCFF */
 @keyframes loading-spin {
   from {
     transform: rotate(0deg);
@@ -42,4 +41,12 @@
   overflow: hidden;
   /* background-repeat: no-repeat;
   background-attachment: fixed; */
+}
+
+.fixed-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  pointer-events: none;
 }

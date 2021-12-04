@@ -1,7 +1,7 @@
 .weaponPage {
     display: flex;
     justify-content: center;
-    border: 5px solid orange;
+    padding: 5% 0;
 }
 
 /* .details {
