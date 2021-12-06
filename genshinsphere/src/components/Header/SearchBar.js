@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useQueries, useIsFetching } from 'react-query';
-import { parseString, reverseParseString } from '../../utils/utils';
+import { parseString, reverseParseString } from '../../utils/utils.js';
 import { useNavigate } from 'react-router-dom';
 
 const searchOptions = [
@@ -55,10 +55,12 @@ const SearchBar = () => {
         setSearchTerm(input);
         const currentFilter = filteredSearch.filter(obj => obj.name === parseString(input)); 
         setFilteredSearch(currentFilter);
+        document.getElementById('searchInput').focus();
     }
 
     const onSubmit = event => {
-        if (event.key === "Enter" && filteredSearch.length === 1 && parseString(searchTerm) === filteredSearch[0].name) {
+        event.preventDefault();
+        if (filteredSearch.length === 1 && parseString(searchTerm) === filteredSearch[0].name) {
             navigate(`/${filteredSearch[0].type}/${parseString(searchTerm)}`)
             clearSearch();
         }
@@ -70,24 +72,22 @@ const SearchBar = () => {
     }
 
     return (
-        <>
-            {isFetching === 0 && <div className = "searchBar">
-                <div className = "input">
-                    <input
-                        type = "text"
-                        placeholder = "Search for characters, artifacts, weapons..."
-                        value = {searchTerm}
-                        onChange = {filterSearch}
-                        onKeyDown = {onSubmit}
-                    />
-                </div>
-                {filteredSearch.length !== 0 && <div className = "dropDown">
-                    {filteredSearch.slice(0, 10).map((searchTerm, index) => (
-                        <p key = {index} onClick = {setInput}>{reverseParseString(searchTerm.name)}</p>
-                    ))}
-                </div>}
+        <div className = "searchBar">
+            <form onSubmit = {onSubmit} className = "input" autocomplete = "off">
+                <input
+                    id = "searchInput"
+                    type = "text"
+                    placeholder = "Search for characters, artifacts, weapons..."
+                    value = {searchTerm}
+                    onChange = {filterSearch}
+                />
+            </form>
+            {filteredSearch.length !== 0 && <div className = "dropDown">
+                {filteredSearch.slice(0, 8).map((searchTerm, index) => (
+                    <p key = {index} onClick = {setInput}>{reverseParseString(searchTerm.name)}</p>
+                ))}
             </div>}
-        </>
+        </div>
     )
 }
 
