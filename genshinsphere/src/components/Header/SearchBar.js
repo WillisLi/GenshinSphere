@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import useQueryList from '../../hooks/useQueryList'
-import axios from 'axios'
-import { useQueries, useIsFetching } from 'react-query'
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useQueries, useIsFetching } from 'react-query';
+import { parseString, reverseParseString } from '../../utils/utils';
+import { useNavigate } from 'react-router-dom';
 
 const searchOptions = [
     "artifacts",
@@ -12,40 +13,81 @@ const searchOptions = [
 
 const fetchList = async (type) => {
     const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/${type}`)
-    return data;
+    return {type: type, list: data};
 }
 
 const SearchBar = () => {
+    const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredSearch, setFilteredSearch] = useState([])
     const searchList = useQueries(searchOptions.map(optionNames => ({
         queryKey: ["options", optionNames],
         queryFn: () => fetchList(optionNames),
         staleTime: 200000,
-    })))
-    const [parsedList, setParsedList] = useState([]);
+    }))).map(item => item.data)
 
     const isFetching = useIsFetching();
 
-    if (isFetching === 0 && searchList[0].status === "success") {
-        // const list = searchList.map(obj => obj.data)
-        // setParsedList(list.flat())
-        // console.log(parsedList)
+    // if (isFetching === 0) {
+    //     console.log(searchList)
+    // }
+
+    const filterSearch = event => {
+        event.preventDefault();
+        const input = event.target.value;
+        setSearchTerm(input);
+        const currentFilter = searchList.map(obj => 
+            obj.list.filter(word => 
+                reverseParseString(word).toLowerCase().includes(input.toLowerCase())).map(name => {
+                    return {
+                        type: obj.type,
+                        name: name
+                    }})).flat().sort((a, b) => a.name > b.name ? 1 : -1)
+        if (input === "") {
+            setFilteredSearch([]);
+        } else {
+            setFilteredSearch(currentFilter);
+        }
     }
 
-    const filterSearch = () => {
-        setFilteredSearch()
+    const setInput = event => {
+        const input = event.target.textContent;
+        setSearchTerm(input);
+        const currentFilter = filteredSearch.filter(obj => obj.name === parseString(input)); 
+        setFilteredSearch(currentFilter);
+    }
+
+    const onSubmit = event => {
+        if (event.key === "Enter" && filteredSearch.length === 1 && parseString(searchTerm) === filteredSearch[0].name) {
+            navigate(`/${filteredSearch[0].type}/${parseString(searchTerm)}`)
+            clearSearch();
+        }
+    }
+
+    const clearSearch = () => {
+        setSearchTerm("");
+        setFilteredSearch([]);
     }
 
     return (
-        <div className = "searchBar">
-            <input
-                type = "text"
-                placeholder = "Search for characters, artifacts, weapons..."
-                // value = {searchTerm}
-                // onChange = {filterSearch}
-            />
-        </div>
+        <>
+            {isFetching === 0 && <div className = "searchBar">
+                <div className = "input">
+                    <input
+                        type = "text"
+                        placeholder = "Search for characters, artifacts, weapons..."
+                        value = {searchTerm}
+                        onChange = {filterSearch}
+                        onKeyDown = {onSubmit}
+                    />
+                </div>
+                {filteredSearch.length !== 0 && <div className = "dropDown">
+                    {filteredSearch.slice(0, 10).map((searchTerm, index) => (
+                        <p key = {index} onClick = {setInput}>{reverseParseString(searchTerm.name)}</p>
+                    ))}
+                </div>}
+            </div>}
+        </>
     )
 }
 
