@@ -1,8 +1,7 @@
 import React from 'react'
-import useQueryEntityData from '../../../hooks/useQueryEntityData';
-import logo from '../../../logo.svg'
-import './ArchiveHistory.css'
 import EntityTable from './EntityTable';
+import useQueryEntityData from 'hooks/useQueryEntityData';
+import './ArchiveHistory.css'
 
 const ArchiveHistory = ({cat, type}) => {
     const { data, status, isLoading, error} = useQueryEntityData("banners", cat)

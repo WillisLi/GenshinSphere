@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import useQueryEntityData from '../../hooks/useQueryEntityData';
+import useQueryEntityData from 'hooks/useQueryEntityData';
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import ShopGraphic from './ShopGraphic';
 import './Homepage.css'
-import hehe from '../../static/images/hehe.png';
+import hehe from 'static/images/hehe.png'
 
 const Homepage = () => {
     const { data: shopData, status, isLoading } = useQueryEntityData('shop', 'starglitter_exchange')

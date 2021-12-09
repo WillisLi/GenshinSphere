@@ -1,8 +1,8 @@
 import React from 'react';
-import useQueryEntityData from '../../hooks/useQueryEntityData';
-import useQueryImage from '../../hooks/useQueryImage';
-import './CharactersList.css'
 import { NavLink } from 'react-router-dom';
+import useQueryEntityData from 'hooks/useQueryEntityData';
+import useQueryImage from 'hooks/useQueryImage';
+import './CharactersList.css'
 
 const CharacterCard = ({index, characterName}) => {
     const { data: charData, status: charStatus } = useQueryEntityData("characters", characterName);

@@ -1,6 +1,6 @@
 import React from 'react';
-import useQueryEntityData from '../../hooks/useQueryEntityData';
-import useQueryImage from '../../hooks/useQueryImage';
+import useQueryEntityData from 'hooks/useQueryEntityData';
+import useQueryImage from 'hooks/useQueryImage';
 import { NavLink } from 'react-router-dom';
 
 const WeaponCard = ({index, weaponName, filterType}) => {

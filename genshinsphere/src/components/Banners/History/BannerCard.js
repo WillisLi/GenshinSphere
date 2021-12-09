@@ -1,6 +1,5 @@
 import React from 'react';
-import useQueryImage from '../../../hooks/useQueryImage';
-import logo from '../../../logo.svg'
+import useQueryImage from 'hooks/useQueryImage';
 import './BannerCard.css'
 
 const BannerCard = ({type, banner}) => {

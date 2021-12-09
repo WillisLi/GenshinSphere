@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import { useQueries, useIsFetching } from 'react-query';
-import { parseString } from "../../../utils/utils";
+import { parseString } from "utils/utils";
 import './EntityTable.css'
 
 const fetchIcon = async (name, category) => {

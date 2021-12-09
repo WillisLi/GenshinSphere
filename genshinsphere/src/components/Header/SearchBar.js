@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useQueries, useIsFetching } from 'react-query';
-import { parseString, reverseParseString } from '../../utils/utils.js';
+import { parseString, reverseParseString } from 'utils/utils';
 import { useNavigate } from 'react-router-dom';
 
 const searchOptions = [
@@ -52,6 +52,7 @@ const SearchBar = () => {
 
     const setInput = event => {
         const input = event.target.textContent;
+        console.log(input)
         setSearchTerm(input);
         const currentFilter = filteredSearch.filter(obj => obj.name === parseString(input)); 
         setFilteredSearch(currentFilter);
@@ -73,7 +74,7 @@ const SearchBar = () => {
 
     return (
         <div className = "searchBar">
-            <form onSubmit = {onSubmit} className = "input" autocomplete = "off">
+            <form onSubmit = {onSubmit} className = "input" autoComplete = "off" spellcheck = "false">
                 <input
                     id = "searchInput"
                     type = "text"
@@ -82,11 +83,11 @@ const SearchBar = () => {
                     onChange = {filterSearch}
                 />
             </form>
-            {filteredSearch.length !== 0 && <div className = "dropDown">
+            <div className = "dropDown">
                 {filteredSearch.slice(0, 8).map((searchTerm, index) => (
                     <p key = {index} onClick = {setInput}>{reverseParseString(searchTerm.name)}</p>
                 ))}
-            </div>}
+            </div>
         </div>
     )
 }

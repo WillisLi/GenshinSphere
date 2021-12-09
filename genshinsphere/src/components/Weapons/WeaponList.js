@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import useQueryList from "../../hooks/useQueryList";
+import useQueryList from "hooks/useQueryList";
 import WeaponCard from "./WeaponCard";
 import './WeaponList.css';
-import logo from '../../logo.svg';
+import logo from 'logo.svg';
 
 const types = [
     "Sword",
