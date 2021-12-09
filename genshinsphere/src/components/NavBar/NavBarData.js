@@ -60,6 +60,12 @@ const NavBarData = [
     },
 
     {
+        title: 'Elements',
+        path: '/elements',
+        icon: '',
+    },
+
+    {
         title: 'Materials',
         path: '/materials',
         icon: <HiTemplate/>,

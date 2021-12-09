@@ -1,0 +1,69 @@
+@mixin on-circle($item-count, $circle-size, $item-size) {
+    position: relative;
+    width:  $circle-size;
+    height: $circle-size;
+    padding: 0;
+    border-radius: 50%; 
+    list-style: none;       
+    
+    > * {
+        display: block;
+        position: absolute;
+        top:  41%; 
+        left: 41%;
+        width:  $item-size;
+        height: $item-size;
+        margin: -($item-size / 2);
+    
+      $angle: (360 / $item-count);
+      $rot: 0;
+  
+        @for $i from 1 through $item-count {
+            &:nth-of-type(#{$i}) {
+            transform: 
+                rotate($rot * 1deg) 
+                translate($circle-size / 2) 
+                rotate($rot * -1deg);
+            }
+  
+        $rot: $rot + $angle;
+        }
+    }
+}
+
+/*Main Elements Page*/
+.elementsList {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5% 0;
+}
+
+
+/*Elements Circle*/
+.elementCircle {
+    // border: 5px solid orange;
+    margin-top: 5%;
+    width: 100%;
+    @include on-circle($item-count: 7, $circle-size: 35em, $item-size: 0); 
+    animation: spin 1.65s normal;
+    display: inline-block;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.elementCard {
+    width: 7em;
+}
+
+.elementCard img {
+    width: 100%;
+}
+
+.elementCard img:hover {
+    opacity: 0.75;
+}

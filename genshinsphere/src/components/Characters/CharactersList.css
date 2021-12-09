@@ -4,10 +4,6 @@ p {
 }
 
 .characterListPage {
-    /* border: 1px solid black; */
-    margin: auto;
-    /* background: brown; */
-    width: 65vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -19,11 +15,11 @@ p {
     margin-top: 3%;
     width: 25%;
     border: 1px solid black;
-    /* background: yellow; */
 }
 
 .characterDetails {
     display: flex;
+    padding: 0;
 }
 
 .characterDetails img {
@@ -37,6 +33,5 @@ p {
     flex-direction: column;
     justify-content: center;
     padding-left: 7%;
-    /* border: 1px solid black; */
     color: black;
 }

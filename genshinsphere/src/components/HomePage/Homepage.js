@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useQueryEntityData from 'hooks/useQueryEntityData';
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import ShopGraphic from './ShopGraphic';
-import './Homepage.css'
+// import './Homepage.css'
 import hehe from 'static/images/hehe.png'
 
 const Homepage = () => {
@@ -52,9 +52,9 @@ const Homepage = () => {
                     </div>
                     <div className = 'youtube-embed'>
                         <p>Check out the latest Youtube Videos!</p>
+                        <iframe src="https://www.youtube.com/embed/KGjnRThxe7k" title = "Character Teaser - Arataki Itto"></iframe>
                         <iframe src="https://www.youtube.com/embed/PUYloYPB9Go" title = "Eula's Story - EP"></iframe>
                         <iframe src="https://www.youtube.com/embed/GU3M6wtfrCY" title = "Albedo's Story - EP"></iframe>
-                        <iframe src="https://www.youtube.com/embed/sgAvJlOL0Gg" title = "Version 2.3 Announcement"></iframe>
                     </div>
                 </div>
             </div>

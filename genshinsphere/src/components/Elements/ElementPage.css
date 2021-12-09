@@ -1,0 +1,22 @@
+.elementPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 0;
+}
+
+.elementHeader {
+    width: 60%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.symbols {
+    display: flex;
+    flex-direction: row;
+}

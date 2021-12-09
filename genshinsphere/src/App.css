@@ -38,15 +38,17 @@
 
 .genshinSphereApp {
   background-image: url("../src/static/images/background.png");
-  overflow: hidden;
   /* background-repeat: no-repeat;
   background-attachment: fixed; */
 }
 
-.fixed-container {
-  position: fixed;
+.navContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.contentContainer {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  pointer-events: none;
 }

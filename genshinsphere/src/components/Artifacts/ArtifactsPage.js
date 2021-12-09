@@ -21,7 +21,7 @@ const ArtifactsPage = () => {
         <div>
             {status === "success" && iconStatus === "success" &&
             <div className = "characterHeader">
-            <h1>{artifact.name}</h1>
+                <h1>{artifact.name}</h1>
             <div className = "details">
                 <div className = "mainImg">
                     <img src = {icon} alt = "artifactIcon"/>

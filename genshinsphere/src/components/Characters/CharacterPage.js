@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import useQueryEntityData from '../../hooks/useQueryEntityData';
-import useQueryImage from '../../hooks/useQueryImage';
+import useQueryEntityData from 'hooks/useQueryEntityData';
+import useQueryImage from 'hooks/useQueryImage';
 import './CharacterPage.css';
-import logo from '../../logo.svg'
+import logo from 'logo.svg'
 
 const CharacterPage = () => {
     const { name } = useParams();
