@@ -19,6 +19,7 @@ This is an open-source database for mobile game, Genshin Impact. The main purpos
 - [x] shop rotation data
 - [x] find a better font
 - [x] add global top bar with search bar and timer
+- [x] element pages
 - [ ] section character data with tabs
 - [ ] Calendar for upcoming character birthdays
 - [ ] current available domains today

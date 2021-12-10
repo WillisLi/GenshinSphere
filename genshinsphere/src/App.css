@@ -8,23 +8,13 @@
   font-display: swap;
 }
 
-.App {
-  text-align: center;
-}
-
+/*Global Styles*/
 * {
   font-family: 'gs_font', 'Poppins', sans-serif;
 }
 
-.loading {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .loading {
-    animation: loading-spin infinite 20s linear;
-  }
+a {
+  text-decoration: none;
 }
 
 @keyframes loading-spin {
@@ -36,19 +26,68 @@
   }
 }
 
+@keyframes dots-jump-up {
+  40% {
+    transform: translate(0, 19px);
+  }
+}
+
+@keyframes emote-jump-up {
+  40% {
+    transform: translate(0, 17px);
+  }
+}
+
+/*App*/
 .genshinSphereApp {
   background-image: url("../src/static/images/background.png");
   /* background-repeat: no-repeat;
   background-attachment: fixed; */
 }
 
+/*NavBar Container*/
 .navContainer {
   display: flex;
   flex-direction: row;
 }
 
+/*Content Container*/
 .contentContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+/*Loading Screen*/
+.loadingScreen {
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(21, 61, 24)), url("static/images/background.png");
+  background-blend-mode: saturation;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.loadingImg {
+  width: 12vw;
+  animation: dots-jump-up 0.9s normal infinite;
+}
+
+.dot {
+  background-color: hsl(0, calc(var(--order) * 15%), 35%);
+  box-shadow: 0rem 0rem 0rem .2rem hsl(0, calc(var(--order) * 15%), 41%);
+  width: 4vh;
+  height: 4vh;
+  border-radius: 50%;
+  margin: 1%;
+  margin-top: 9%;
+  animation: dots-jump-up 0.9s normal infinite;
+  animation-delay: calc(var(--order) * 100ms);
+  z-index: 99;
 }

@@ -37,11 +37,8 @@ function App() {
   return (
     <QueryClientProvider client = {queryClient}>
       <div className = "genshinSphereApp">
-        {/* <div className = "fixed-container">
-          <Header />
-          <NavBar/>
-        </div> */}
         <Header />
+
         <div className = 'navContainer'>
           <NavBar />
           <div className = "contentContainer">
@@ -49,18 +46,18 @@ function App() {
               <Route exact path = "/" element = {<Homepage />}/>
               <Route exact path = "/artifacts" element = {<ArtifactsList />}/>
               <Route path = "/artifacts/:name" element = {<ArtifactsPage />}/>
-              <Route exact path = "/characters" element = {<CharactersList />}/>
-              <Route path = "/characters/:name" element = {<CharacterPage />}/>
-              <Route exact path = "/elements" element = {<Elements />}/>
-              <Route path = "/elements/:name" element = {<ElementPage />}/>
-              <Route exact path = "/weapons" element = {<WeaponList />}/>
-              <Route path = "/weapons/:name" element = {<WeaponPage />}/>
               <Route exact path = "/banners" element = {<BannerHistory />}/>
               <Route path = "/banners/4*char" element = {<ArchiveHistory cat = {"character"} type = {"featured"}/>}/>
               <Route path = "/banners/4*weapon" element = {<ArchiveHistory cat = {"weapon"} type = {"featured"}/>}/>
               <Route path = "/banners/5*weapon" element = {<ArchiveHistory cat = {"weapon"} type = {"limited"}/>}/>
+              <Route exact path = "/characters" element = {<CharactersList />}/>
+              <Route path = "/characters/:name" element = {<CharacterPage />}/>
+              <Route exact path = "/elements" element = {<Elements />}/>
+              <Route path = "/elements/:name" element = {<ElementPage />}/>
               <Route exact path = "/food" element = {<Maintenance />}/>
               <Route exact path = "/materials" element = {<Maintenance />}/>
+              <Route exact path = "/weapons" element = {<WeaponList />}/>
+              <Route path = "/weapons/:name" element = {<WeaponPage />}/>
             </Routes>
             <Footer />
           </div>

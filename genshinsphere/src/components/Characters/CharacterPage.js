@@ -2,8 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import useQueryEntityData from 'hooks/useQueryEntityData';
 import useQueryImage from 'hooks/useQueryImage';
+import Loading from "components/atoms/Loading";
 import './CharacterPage.css';
-import logo from 'logo.svg'
 
 const CharacterPage = () => {
     const { name } = useParams();
@@ -12,7 +12,7 @@ const CharacterPage = () => {
     console.log(character)
 
     if (isLoading || loadingPortrait) {
-        return <div className = "loadingDiv"><img src = {logo} className = "loading" alt = "Loading..." /></div>
+        return <Loading />
     }
 
     return (

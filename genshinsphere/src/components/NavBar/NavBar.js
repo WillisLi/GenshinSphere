@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { NavLink } from "react-router-dom";
+import NavBarData from "./NavBarData";
 import "./NavBar.css";
-import NavBarData from "./NavBarData"
-import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
-    const [subMenu, setSubMenu] = useState(false);
+    const [subMenu, setSubMenu] = useState(false)
 
     const displaySubMenu = (event) => {
         event.preventDefault();
@@ -13,24 +13,24 @@ const NavBar = () => {
 
     return (
         <div className = "navBar">
-            {NavBarData.map((nav, index) => (
+            {NavBarData.map((item, index) => (
                 <div key = {index} className = "navBarItem">
-                    {nav.path ? <NavLink to = {nav.path}>
-                        {nav.icon}
-                        <span>{nav.title}</span>
+                    {item.path ? <NavLink to = {item.path}>
+                        {item.icon}
+                        <span>{item.title}</span>
                     </NavLink>:
-                    <div className = "dropDownNav" onClick = {nav.subMenu && displaySubMenu}>
+                    <div className = "dropDownItem" onClick = {item.subMenu && displaySubMenu}>
                         <div>
-                            {nav.icon}
-                            <span>{nav.title}</span>
+                            {item.icon}
+                            <span>{item.title}</span>
                         </div>
-                            {nav.subMenu && subMenu ? nav.openIcon : nav.subMenu ? nav.closedIcon : null}
+                            {item.subMenu && subMenu ? item.openIcon : item.subMenu ? item.closedIcon : null}
                     </div>}
                     <div className = "subMenuDiv">
-                        {subMenu && nav.subMenu.map((subNav, index) => (
-                            <NavLink to = {subNav.path} key = {index}>
-                                {subNav.icon}
-                                {subNav.title}
+                        {subMenu && item.subMenu && item.subMenu.map((subItem, index) => (
+                            <NavLink to = {subItem.path} key = {index}>
+                                {subItem.icon}
+                                {subItem.title}
                             </NavLink>
                         ))}
                     </div>

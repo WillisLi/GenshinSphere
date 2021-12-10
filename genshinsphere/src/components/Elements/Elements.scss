@@ -47,7 +47,7 @@
     margin-top: 5%;
     width: 100%;
     @include on-circle($item-count: 7, $circle-size: 35em, $item-size: 0); 
-    animation: spin 1.65s normal;
+    animation: spin 1s normal;
     display: inline-block;
 }
 
