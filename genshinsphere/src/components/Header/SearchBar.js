@@ -74,7 +74,7 @@ const SearchBar = () => {
 
     return (
         <div className = "searchBar">
-            <form onSubmit = {onSubmit} className = "input" autoComplete = "off" spellcheck = "false">
+            <form onSubmit = {onSubmit} className = "input" autoComplete = "off" spellCheck = "false">
                 <input
                     id = "searchInput"
                     type = "text"

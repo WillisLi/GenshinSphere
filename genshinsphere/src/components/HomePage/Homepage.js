@@ -18,6 +18,12 @@ const Homepage = () => {
         <div className = "homepage">
             <div className = "mainContent">
                 <div className = "info">
+                    <section className = "about">
+                        <h2>About</h2>
+                        <p>
+                            
+                        </p>
+                    </section>
                     {status === 'success' && <div className = "shopSection">
                         <p className = "shopHeader">{currentMonth}'s Shop Rotation!</p>
                         {shopData.rotation.map((correct, index) => (
@@ -52,9 +58,9 @@ const Homepage = () => {
                     </div>
                     <div className = 'youtube-embed'>
                         <p>Check out the latest Youtube Videos!</p>
+                        <iframe src="https://www.youtube.com/embed/O9Z96Mg-pk0" title = "Character Teaser - Gorou"></iframe>
                         <iframe src="https://www.youtube.com/embed/YjiloHxQ5eE" title = "TGA 2021 Entry Video"></iframe>
                         <iframe src="https://www.youtube.com/embed/KGjnRThxe7k" title = "Character Teaser - Arataki Itto"></iframe>
-                        <iframe src="https://www.youtube.com/embed/PUYloYPB9Go" title = "Eula's Story - EP"></iframe>
                     </div>
                 </div>
             </div>

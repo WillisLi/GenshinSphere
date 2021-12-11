@@ -1,3 +1,4 @@
+/*Banner History Page*/
 .bannerHistoryPage {
     width: 85vw;
     float: right;
@@ -10,9 +11,22 @@
     /* border: 5px solid orange; */
 }
 
-.bannerHistoryPage div{
+/*Banner Columns*/
+.charColumn, .weapColumn{
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+}
+
+/*Banner Cards*/
+.bannerCard {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 3vh 0;
+}
+
+.bannerCard img {
+    width: 30vw;
 }

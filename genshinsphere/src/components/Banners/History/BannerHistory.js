@@ -1,15 +1,17 @@
 import React from 'react';
+import Loading from 'components/atoms/Loading'
 import useQueryEntityData from '../../../hooks/useQueryEntityData';
 import BannerCard from './BannerCard';
+import  { useIsFetching } from 'react-query';
 import './BannerHistory.css'
-import logo from '../../../logo.svg'
 
 const BannerHistory = () => {
     const { data: weaponBannerList, status: weapStatus, isLoading: weapLoading} = useQueryEntityData("banners", "weapon")
     const { data: characterBannerList, status: charStatus, isLoading: charLoading} = useQueryEntityData("banners", "character")
+    const isFetching = useIsFetching();
 
-    if (weapLoading || charLoading) {
-        return <div className = "loadingDiv"><img src = {logo} className = "loading" alt = "Loading..." /></div>
+    if (isFetching !== 0 || weapLoading || charLoading) {
+        return <Loading />
     }
 
     return (
@@ -18,11 +20,13 @@ const BannerHistory = () => {
                 {charStatus === 'success' && characterBannerList.map((character, index) => (
                     <BannerCard key = {index + "c"} banner = {character} type = "character"/>
                 ))}
+                <h1>Character Event Wish</h1>
             </div>
             <div className = "weapColumn">
                 {weapStatus === 'success' && weaponBannerList.map((weapon, index) => (
                     <BannerCard key = {index + "w"} banner = {weapon} type = "weapon"/>
                 ))}
+                <h1>Epitome Invocation</h1>
             </div>
         </div>
     );
