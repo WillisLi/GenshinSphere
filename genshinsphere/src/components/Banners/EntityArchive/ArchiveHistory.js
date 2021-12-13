@@ -1,6 +1,7 @@
 import React from 'react'
 import EntityTable from './EntityTable';
 import useQueryEntityData from 'hooks/useQueryEntityData';
+import { reverseParseString } from 'utils/utils';
 import './ArchiveHistory.css'
 
 const ArchiveHistory = ({cat, type}) => {
@@ -23,6 +24,7 @@ const ArchiveHistory = ({cat, type}) => {
 
     return (
         <div className = "archivePage">
+            <h1>{type === "limited" ? reverseParseString(type) + ` 5-Star ${reverseParseString(cat)} History`: reverseParseString(type) + ` 4-Star ${reverseParseString(cat)} History`}</h1>
             {status === "success" &&
             <EntityTable entityNames = {propList(data, `${type}`)} history = {data} versions = {propList(data, "version")} category = {`${cat}s`} type = {`${type}`}/>
             }

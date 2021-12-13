@@ -74,7 +74,7 @@ const EntityTable = ({entityNames, history, versions, category, type}) => {
                     {isFetching === 0 && results[0].status === 'success' && entityNames.sort().map((entityName, idx) => (
                         <tr key = {idx}>
                             <td key = {entityName}>{entityName}</td>
-                            {isFetching === 0 && results[0].status === 'success' && countEntity(history, `${entityName}`, type).map((entityHistory, idx) => (
+                            {isFetching === 0 && results[idx].status === 'success' && countEntity(history, `${entityName}`, type).map((entityHistory, idx) => (
                                 entityHistory === 'featured' ? 
                                 <td key = {idx} style = {type === 'featured' ? {background: 'hsl(253, 100%, 74%)'} : {background: 'hsl(40, 100%, 74%)'}}><img src = {getIcon(results, parseString(entityName))} alt = {`${entityName}`}/></td> : 
                                 entityHistory === null ? 

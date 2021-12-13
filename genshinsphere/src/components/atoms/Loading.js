@@ -1,8 +1,10 @@
 import React from 'react'
 import eulaEat from 'static/images/loading/eulaEat.png'
 import eulaSee from 'static/images/loading/eulaSee.png'
+import fischlHaha from 'static/images/loading/fischlHaha.png'
 import heheTao from 'static/images/loading/heheTao.png'
 import monaHehe from 'static/images/loading/monaHehe.png'
+import qiqiFallen from 'static/images/loading/qiqiFallen.png'
 import reallyPaimon from 'static/images/loading/reallyPaimon.png'
 import saraStop from 'static/images/loading/saraStop.png'
 import sayuAnnoyed from 'static/images/loading/sayuAnnoyed.png'
@@ -12,8 +14,10 @@ import worriedGanyu from 'static/images/loading/worriedGanyu.png'
 const imgList = [
     eulaEat,
     eulaSee,
+    fischlHaha,
     heheTao,
     monaHehe,
+    qiqiFallen,
     reallyPaimon,
     saraStop,
     sayuAnnoyed,

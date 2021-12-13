@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';

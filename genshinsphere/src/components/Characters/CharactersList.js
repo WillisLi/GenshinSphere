@@ -8,9 +8,12 @@ const CharactersList = () => {
 
     return (
         <div className = "characterListPage">
-            {status === 'success' && data.map((character, index) => (
-                <CharacterCard key = {index} characterName = {character}/>
-            ))}
+            <h1>Characters</h1>
+            <div className = "characterList">
+                {status === 'success' && data.map((character, index) => (
+                    <CharacterCard key = {index} characterName = {character}/>
+                ))}
+            </div>
         </div>
     )
 }

@@ -1,16 +1,23 @@
-p {
-    margin: 0;
-    padding: 0;
+/*Character List Directory*/
+.characterListPage {
+    display: flex;
+    flex-direction: column;
 }
 
-.characterListPage {
+.characterListPage h1 {
+    margin: 2%;
+}
+
+/*Main Content*/
+.characterList {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     justify-content: space-evenly;
-    padding: 5% 0;
 }
 
+
+/*Character Cards*/
 .characterCard {
     margin-top: 3%;
     width: 25%;
@@ -27,11 +34,15 @@ p {
     padding: 0;
 }
 
-
 .characterText {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 7%;
     color: black;
+}
+
+.characterText p {
+    margin: 0;
+    padding: 0;
 }

@@ -25,7 +25,7 @@ const WeaponPage = () => {
             <h1>{weapon.name}</h1>
             <div className = "details">
                 <div className = "mainImg">
-                    <img style = {weapon.rarity === 4 ? {background: 'hsl(253, 100%, 84%)'} : {background: 'hsl(40, 100%, 66%)'}} src = {icon} alt = "weaponIcon"/>
+                    <img style = {weapon.rarity === 4 ? {background: 'linear-gradient(110deg, hsl(255, 100%, 70%), hsl(263, 100%, 80%))'} : {background: 'linear-gradient(110deg, hsl(37, 100%, 60%), hsl(43, 79%, 80%)'}} src = {icon} alt = "weaponIcon"/>
                 </div>
                 <table>
                     <tbody>

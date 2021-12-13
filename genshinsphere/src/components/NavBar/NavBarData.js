@@ -36,17 +36,17 @@ const NavBarData = [
                 icon: '',
             },
             {
-                title: '5* Weapon Archive',
+                title: '5★ Weapon Archive',
                 path: '/banners/5*weapon',
                 icon: '',
             },
             {
-                title: '4* Character Archive',
+                title: '4★ Character Archive',
                 path: '/banners/4*char',
                 icon: '',
             },
             {
-                title: '4* Weapon Archive',
+                title: '4★ Weapon Archive',
                 path: '/banners/4*weapon',
                 icon: '',
             },

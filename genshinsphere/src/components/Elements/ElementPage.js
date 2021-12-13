@@ -3,26 +3,26 @@ import { useParams } from 'react-router-dom';
 import useQueryEntityData from 'hooks/useQueryEntityData';
 import useQueryImage from 'hooks/useQueryImage';
 import Image from 'components/atoms/Image';
-import './ElementPage.css'
+import './ElementPage.scss'
 
 const ElementPage = () => {
     const { name } = useParams();
-    const { data: element, status, isLoading, error } = useQueryEntityData("elements", name);
-    const { data: icon, status: iconStatus, isLoading: loadingIcon} = useQueryImage("elements", name, "icon")
+    const { data: element, status} = useQueryEntityData("elements", name);
+    const { data: icon, status: iconStatus} = useQueryImage("elements", name, "icon")
 
     return (
         <div className = "elementPage">
             {status === "success" && iconStatus === "success" &&
             <div className = "elementHeader">
                 <h1>{element.name}</h1>
-                <img src = {icon} alt = "elementIcon"/>
+                <img className = {`${name}`} src = {icon} alt = "elementIcon"/>
             </div>}
             <div className = "reactions">
-                <h2>Reactions</h2>
+                <h2 style = {{"font-size": "2rem"}}>Reactions</h2>
                 {status === "success" && element.reactions.map((reaction, index) => (
                     <div key = {index} className = "reaction">
-                        <h3>{reaction.name}</h3>
-                        {reaction.effect && <p style = {{margin: "2% 1%"}}>{reaction.effect}</p>}
+                        <h3 className = "reactionName">{reaction.name}</h3>
+                        {reaction.effect && <p className = "reactionEffect">{reaction.effect}</p>}
                         <div className = "symbols">
                             {reaction.elements.map((element, index) => (
                                 <Image index = {index} cat = "elements" name = {element.toLowerCase()} type = "icon"/>

@@ -1,0 +1,92 @@
+/*Animation Functions*/
+@mixin elements($element, $color) {
+    @keyframes #{$element}-glow {
+        0% {
+            filter: drop-shadow(0 0 0rem $color);
+        }
+    
+        100% {
+            filter: drop-shadow(0 0 0.9rem $color);
+        }
+    }
+}
+
+/*Element Page*/
+.elementPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 0;
+}
+
+.elementHeader {
+    width: 60%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    img {
+        width: 13vw;
+    }
+}
+
+/*Glow Effects*/
+.anemo {
+    @include elements(anemo,green);
+    animation: anemo-glow 1.5s ease-in infinite alternate;
+}
+
+.cryo {
+    @include elements(cryo,rgb(127, 203, 228));
+    animation: cryo-glow 1.5s ease-in infinite alternate;
+}
+
+.dendro {
+    @include elements(dendro,rgb(145, 218, 103));
+    animation: dendro-glow 1.5s ease-in infinite alternate;
+}
+
+.electro {
+    @include elements(electro,rgb(182, 68, 172));
+    animation: electro-glow 1.5s ease-in infinite alternate;
+}
+
+.geo {
+    @include elements(geo,rgba(165, 136, 42, 0.726));
+    animation: geo-glow 1.5s ease-in infinite alternate;
+}
+
+.hydro {
+    @include elements(hydro,rgb(101, 210, 218));
+    animation: hydro-glow 1.5s ease-in infinite alternate;
+}
+
+.pyro {
+    @include elements(pyro,orange);
+    animation: pyro-glow 1.5s ease-in infinite alternate;
+}
+
+/*Reactions*/
+.reactionName {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.reactionEffect {
+    color: rgb(90, 84, 84);
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+    text-indent: 1vw;
+}
+
+.symbols {
+    display: flex;
+    flex-direction: row;
+    img {
+        width: 3%;
+    }
+}

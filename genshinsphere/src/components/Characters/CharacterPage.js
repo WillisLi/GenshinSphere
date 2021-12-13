@@ -21,9 +21,7 @@ const CharacterPage = () => {
             <div className = "characterHeader">
                 <h1>{character.name}</h1>
                 <div className = "details">
-                    <div className = "mainImg">
-                        <img src = {characterPortrait} alt = "characterPortrait"/>
-                    </div>
+                    <img className = "mainImg" src = {characterPortrait} alt = "characterPortrait"/>
                     <table>
                         <tbody>
                             <tr>
