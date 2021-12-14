@@ -20,13 +20,6 @@ import Footer from 'components/Footer/Footer';
 
 const queryClient = new QueryClient();
 
-const types = [
-  "artifacts",
-  "banners",
-  "characters",
-  "weapons",
-]
-
 function App() {
   const location = useLocation();
   

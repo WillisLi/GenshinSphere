@@ -12,14 +12,14 @@ const ArtifactsCard = ({index, artifactName}) => {
     }
 
     return (
-        <div className = "artifactsCard">
+        <>
             {artifactStatus === 'success' && iconStatus === 'success' &&
             <NavLink to = {`/artifacts/${artifactName}`} key = {index}>
-            <div className = "artifactDetails">
+            <div className = "artifactCard">
                 <img src = {icon} alt = "artifactIcon"/>
                 <p>{artifactData.name}</p>
             </div></NavLink>}
-        </div>
+        </>
     )
 }
 

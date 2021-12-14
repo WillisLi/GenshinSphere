@@ -2,14 +2,17 @@
 .characterListPage {
     display: flex;
     flex-direction: column;
-}
-
-.characterListPage h1 {
-    margin: 2%;
+    align-items: center;
+    padding: 0 0 5%;
+    h1 {
+        width: 90%;
+        margin: 2%;
+    }
 }
 
 /*Main Content*/
 .characterList {
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -19,19 +22,14 @@
 
 /*Character Cards*/
 .characterCard {
-    margin-top: 3%;
-    width: 25%;
-    border: 1px solid black;
-}
-
-.characterDetails {
     display: flex;
-    padding: 0;
-}
-
-.characterDetails img {
-    height: 20vh;
-    padding: 0;
+    width: 20vw;
+    flex-direction: row;
+    margin-top: 3%;
+    border: 1px solid black;
+    img {
+        height: 20vh;
+    }
 }
 
 .characterText {
@@ -40,9 +38,4 @@
     justify-content: center;
     padding-left: 7%;
     color: black;
-}
-
-.characterText p {
-    margin: 0;
-    padding: 0;
 }

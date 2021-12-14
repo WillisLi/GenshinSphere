@@ -13,7 +13,7 @@ const WeaponCard = ({index, weaponName, filterType}) => {
 
     return (
         <>
-        {weaponStatus === 'success' && weaponData.type === `${filterType}` && iconStatus === 'success' &&
+        {weaponStatus === 'success' && (weaponData.type === `${filterType}` || `${filterType}` === 'All') && iconStatus === 'success' &&
             <NavLink to = {`/weapons/${weaponName}`} key = {index}>
             <div className = "weaponCard">
                 <img style = {weaponData.rarity === 4 ? {background: 'linear-gradient(110deg, hsl(255, 100%, 70%), hsl(263, 100%, 80%))'} : {background: 'linear-gradient(110deg, hsl(37, 100%, 60%), hsl(43, 79%, 80%)'}} src = {icon} alt = "weaponIcon"/>

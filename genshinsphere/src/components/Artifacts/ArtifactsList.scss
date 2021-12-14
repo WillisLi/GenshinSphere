@@ -1,0 +1,74 @@
+/*Artifact List Page*/
+.artifactListPage {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 5%;
+    h1 {
+        margin: 2%;
+    }
+}
+
+/*Main Content*/
+.artifactList {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+/*Artifact Cards*/
+.artifactCard {
+    border: 1px solid black;
+    margin-top: 5%;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    img {
+        height: 15vh;
+    }
+    p {
+        width: fit-content;
+    }
+}
+
+/*---------------------New Component---------------------*/
+
+/*Artifact Pages*/
+.artifactPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3% 0 5%;
+}
+
+.artifactHeader {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    .details {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        .mainImg {
+            width: 20%;
+        }
+        table {
+            width: 75%;
+        }
+        th {
+            font-size: 1.2rem;
+            width: 18%;
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins';
+        }
+        td {
+            color: rgb(94, 91, 91);
+            text-align: center;
+            font-family: 'Poppins';
+        }
+    }
+}
