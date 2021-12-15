@@ -1,38 +1,16 @@
-/*Weapon List Directory Page*/
-.weaponListPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 0 5%;
-    h1 {
-        width: 90%;
-        margin: 2%;
-    }
-}
-
-/*Main Content*/
-.weaponList {
-    border: 1px solid black;
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-content: space-evenly;
-}
-
 /*Weapon Cards*/
 .weaponCard {
-    margin-top: 7%;
-}
-
-.weaponCard img {
-    height: 35vh;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 20vw;
+    margin-top: 3%;
+    img {
+        height: 20vh;
+    }
 }
 
 .weaponListPage p {
     margin: 0% 1%;
-}
-
-/*Weapon Filters*/
-.filter-tabs {
 }

@@ -13,7 +13,7 @@ const WeaponList = () => {
     const isFetching = useIsFetching();
 
     const filterWeapons = event => {
-        const type = event.target.innerText;
+        const type = event.target.value;
         setFilterType(`${type}`)
     }
 
@@ -22,10 +22,10 @@ const WeaponList = () => {
     }
 
     return (
-        <div className = "weaponListPage">
+        <div className = "page">
             <h1>Weapons</h1>
             <FilterTabs filters = {types} filterByType = {filterWeapons} />
-            <div className = "weaponList">
+            <div className = "list">
                 {status === 'success' && data.map((weapon, index) => (
                     <WeaponCard key = {index} weaponName = {weapon} filterType = {filterType}/>
                 ))}

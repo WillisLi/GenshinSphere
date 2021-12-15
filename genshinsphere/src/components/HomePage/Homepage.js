@@ -58,9 +58,9 @@ const Homepage = () => {
                     </div>
                     <div className = 'youtube-embed'>
                         <p>Check out the latest Youtube Videos!</p>
+                        <iframe src="https://www.youtube.com/embed/DdCDD-Jeyl4" title = "Collected Miscellany - Gorou"></iframe>
+                        <iframe src="https://www.youtube.com/embed/3DXG7eYBTMU" title = "Collected Miscellany - Itto"></iframe>
                         <iframe src="https://www.youtube.com/embed/iXeJ94AFZDw" title = "Character Demo - Arataki Itto"></iframe>
-                        <iframe src="https://www.youtube.com/embed/O9Z96Mg-pk0" title = "Character Demo - Gorou"></iframe>
-                        <iframe src="https://www.youtube.com/embed/YjiloHxQ5eE" title = "TGA 2021 Entry Video"></iframe>
                     </div>
                 </div>
         </div>

@@ -38,12 +38,6 @@ P {
   }
 }
 
-@keyframes emote-jump-up {
-  40% {
-    transform: translate(0, 17px);
-  }
-}
-
 /*App*/
 .genshinSphereApp {
   background-image: url("../src/static/images/background.png");
@@ -96,4 +90,26 @@ P {
   animation: dots-jump-up 0.9s normal infinite;
   animation-delay: calc(var(--order) * 100ms);
   z-index: 99;
+}
+
+/*General Component Page*/
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 5%;
+  min-height: 100vh;
+  h1 {
+      width: 90%;
+      margin: 2%;
+  }
+}
+
+/*Component List*/
+.list {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
 }

@@ -13,7 +13,7 @@ const CharactersList = () => {
     const isFetching = useIsFetching();
 
     const filterCharacters = event => {
-        const type = event.target.innerText;
+        const type = event.target.value;
         setFilterType(`${type}`)
     }
 
@@ -22,12 +22,12 @@ const CharactersList = () => {
     }
 
     return (
-        <div className = "characterListPage">
+        <div className = "page">
             <h1>Characters</h1>
-            {/* <FilterTabs filter = {elementTypes} filterByType = {filterCharacters} /> */}
-            <div className = "characterList">
+            <FilterTabs filters = {elementTypes} filterByType = {filterCharacters} />
+            <div className = "list">
                 {status === 'success' && data.map((character, index) => (
-                    <CharacterCard key = {index} characterName = {character}/>
+                    <CharacterCard key = {index} characterName = {character} filterType = {filterType}/>
                 ))}
             </div>
         </div>
