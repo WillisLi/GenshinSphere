@@ -107,9 +107,58 @@ P {
 
 /*Component List*/
 .list {
+  padding: 2% 0;
   width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   justify-content: space-evenly;
+}
+
+/*Filter Tabs*/
+.filter-tabs {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.filterTab {
+  border: none;
+  background: none;
+  color: rgb(65, 65, 58);
+  width: 15%;
+  padding: 0 2% 0.95%;
+  margin: 0;
+  font-size: 1.75rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.filterTab::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  margin: 0;
+  bottom: 0;
+  background-color: hsla(0, 0%, 0%, 0.22);
+}
+
+.filterTab::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.2rem;
+  left: 0;
+  margin: 0;
+  bottom: 0;
+  background-color: hsla(0, 3%, 30% , 0.8);
+  transform: scale(0, 1);
+  transition: transform 0.35s ease;
+}
+
+.filterTab:focus::after, .filterTab:hover::after {
+  transform: scale(1, 1);
 }

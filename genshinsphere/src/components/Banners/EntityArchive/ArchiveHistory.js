@@ -23,7 +23,7 @@ const ArchiveHistory = ({cat, type}) => {
     }
 
     return (
-        <div className = "archivePage">
+        <div className = "page">
             <h1>{type === "limited" ? reverseParseString(type) + ` 5-Star ${reverseParseString(cat)} History`: reverseParseString(type) + ` 4-Star ${reverseParseString(cat)} History`}</h1>
             {status === "success" &&
             <EntityTable entityNames = {propList(data, `${type}`)} history = {data} versions = {propList(data, "version")} category = {`${cat}s`} type = {`${type}`}/>

@@ -13,7 +13,7 @@ const ArtifactsPage = () => {
     }
 
     return (
-        <div className = "artifactPage">
+        <div className = "page">
             {status === "success" && iconStatus === "success" &&
             <div className = "artifactHeader">
                 <h1>{artifact.name}</h1>

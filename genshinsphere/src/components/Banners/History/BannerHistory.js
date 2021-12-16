@@ -16,18 +16,18 @@ const BannerHistory = () => {
 
     return (
         <div className = "bannerHistoryPage">
-            <div className = "charColumn">
-                {charStatus === 'success' && characterBannerList.map((character, index) => (
+            {charStatus === 'success' && <div className = "charColumn">
+                {characterBannerList.map((character, index) => (
                     <BannerCard key = {index + "c"} banner = {character} type = "character"/>
                 ))}
                 <h1>Character Event Wish</h1>
-            </div>
-            <div className = "weapColumn">
-                {weapStatus === 'success' && weaponBannerList.map((weapon, index) => (
+            </div>}
+            {weapStatus === 'success' && <div className = "weapColumn">
+                {weaponBannerList.map((weapon, index) => (
                     <BannerCard key = {index + "w"} banner = {weapon} type = "weapon"/>
                 ))}
                 <h1>Epitome Invocation</h1>
-            </div>
+            </div>}
         </div>
     );
 }

@@ -16,17 +16,14 @@
 /*---------------------New Component---------------------*/
 
 /*Artifact Pages*/
-.artifactPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3% 0 5%;
-}
-
 .artifactHeader {
     width: 90%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    h1 {
+        width: 100%;
+    }
     .details {
         display: flex;
         flex-direction: row;

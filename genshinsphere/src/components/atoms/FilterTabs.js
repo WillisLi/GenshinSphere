@@ -4,7 +4,7 @@ function FilterTabs({filters, filterByType}) {
     return (
         <div className = "filter-tabs">
             {filters.map((filter, index) => (
-                <button filter = "button" value = {filter} className = {`${filter}`} key = {index} onClick = {filterByType}>{typeof(filter) === "number" ? `${filter} Star` : filter}</button>
+                <button filter = "button" value = {filter} className = "filterTab" key = {index} onClick = {filterByType}>{typeof(filter) === "number" ? `${filter}★` : filter}</button>
             ))}
         </div>
     )
