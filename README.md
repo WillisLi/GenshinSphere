@@ -20,7 +20,10 @@ This is an open-source database for mobile game, Genshin Impact. The main purpos
 - [x] find a better font
 - [x] add global top bar with search bar and timer
 - [x] element pages
+- [x] team suggestions
 - [ ] section character data with tabs
+- [ ] button image switcher
+- [ ] back history nav button
 - [ ] Calendar for upcoming character birthdays
 - [ ] current available domains today
 - [ ] Check if can consolidate common entity pages to one component

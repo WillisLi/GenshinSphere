@@ -2,7 +2,6 @@ import React from 'react';
 import useQueryImage from '../../hooks/useQueryImage';
 import { parseString } from '../../utils/utils'
 import { NavLink } from 'react-router-dom';
-import './Homepage.css'
 
 const ShopGraphic = ({index, type, name}) => {
     const { data: icon, status: iconStatus} = useQueryImage(`${type}`, parseString(name), "icon");

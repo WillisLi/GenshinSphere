@@ -14,6 +14,7 @@ import CharacterPage from 'components/Characters/CharacterPage';
 import Elements from 'components/Elements/Elements';
 import ElementPage from 'components/Elements/ElementPage';
 import Maintenance from 'components/Maintenance/Maintenance';
+import Teams from 'components/Teams/Teams';
 import WeaponList from 'components/Weapons/WeaponList';
 import WeaponPage from 'components/Weapons/WeaponPage';
 import Footer from 'components/Footer/Footer';
@@ -49,6 +50,7 @@ function App() {
               <Route path = "/elements/:name" element = {<ElementPage />}/>
               <Route exact path = "/food" element = {<Maintenance />}/>
               <Route exact path = "/materials" element = {<Maintenance />}/>
+              <Route path = "/teams" element = {<Teams />}/>
               <Route exact path = "/weapons" element = {<WeaponList />}/>
               <Route path = "/weapons/:name" element = {<WeaponPage />}/>
             </Routes>

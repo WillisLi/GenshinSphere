@@ -8,8 +8,13 @@
 /*Main Content Containers*/
 .info {
     display: flex;
+    flex-direction: column;
     width: 60%;
-    justify-content: center;
+    margin-left: 3%;
+    section {
+        height: min-content;
+        box-shadow: .2rem .2rem 1rem grey;
+    }
     /* border: 3px solid black; */
 }
 
@@ -24,14 +29,29 @@
 
 /*About*/
 .about {
-    box-shadow: .2rem .2rem 1rem grey;
-    height: min-content;
-    margin-left: 5%;
     padding: 0 2% 2%;
+    img {
+        width: 7.5%;
+    }
 }
 
-.about img {
-    width: 7.5%;
+/*Team Recommendations*/
+.recommendations {
+    width: min-content;
+    padding: 0 1% 2%;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    h2 {
+        text-align: center;
+    }
+    img {
+        width: 19vw;
+    }
+    img:hover {
+        filter: drop-shadow(0 0 0.9rem gray);
+        transition: filter 0.2s ease-out;
+    }
 }
 
 /*Shop*/
@@ -66,15 +86,16 @@
     align-items: center;
 }
 
-.currentItems img {
-    height: 5vw;
-    border: 1px solid black;
-}
-
-.currentItems p {
-    font-size: 0.7rem;
-    font-family: 'Poppins';
-    text-align: center;
+.currentItems {
+    img {
+        height: 5vw;
+        border: 1px solid black;
+    }
+    p {
+        font-size: 0.7rem;
+        font-family: 'Poppins';
+        text-align: center;
+    }
 }
 
  /*Twitter Embeds*/
@@ -101,13 +122,11 @@
     padding: 1% 0 2.5%;
     font-size: 0.9rem;
     text-align: center;
+    img {
+        width: 2vw;
+        vertical-align: text-bottom;
+    }
 }
-
-.twitter-header img {
-    width: 2vw;
-    vertical-align: text-bottom;
-}
-
  /*Youtube Section*/
 .youtube-embed {
     background-color: rgba(200,198,198, 0.2);

@@ -1,0 +1,27 @@
+.teams {
+    width: 90%;
+}
+
+.team-container {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    img {
+        height: 18vh;
+    }
+    .units {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p {
+            padding: 5% 0;
+        }
+    }
+}
+
+.teamDesc {
+    white-space: pre-line;
+    color: hsl(0, 5%, 44%);
+    line-height: 1;
+}

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import useQueryEntityData from 'hooks/useQueryEntityData';
 import { TwitterTimelineEmbed } from "react-twitter-embed";
+import { NavLink } from 'react-router-dom';
+import useQueryEntityData from 'hooks/useQueryEntityData';
 import ShopGraphic from './ShopGraphic';
-import './Homepage.css'
+import './Homepage.scss'
 import hehe from 'static/images/hehe.png'
 import heyTao from 'static/images/heyTao.png'
+import jeanTeach from 'static/images/jeanTeach.png'
 
 const Homepage = () => {
     const { data: shopData, status, isLoading } = useQueryEntityData('shop', 'starglitter_exchange')
@@ -23,6 +25,12 @@ const Homepage = () => {
                         <p style = {{"text-indent": 0}}>
                             GenshinSphere is a fan-made project and all assets and rights belong to miHoYo Co., Ltd. This is a database for mobile game, Genshin Impact, primarily used to serve as a central hub for players to easily access useful resources related to the game.<br></br>Updates to this site are continuously being made to improve your overall user experience.
                         </p>
+                    </section>
+                    <section className = "recommendations">
+                        <h2>Check out team compositions I use and recommend!</h2>
+                        <NavLink to = "/teams">
+                            <img src = {jeanTeach} alt = "jeanTeach" />
+                        </NavLink>
                     </section>
                 </div>
                 <div className = "side">
