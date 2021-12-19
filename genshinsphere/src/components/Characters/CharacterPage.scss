@@ -1,0 +1,73 @@
+h1 {
+    border: 1px solid black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/*Character Header*/
+.characterHeader {
+    border: 1px solid black;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    .filter-tabs {
+        flex-direction: column;
+        width: fit-content;
+        .filterTab {
+            width: 7vw;
+            font-size: 1.4rem;
+            border-radius: 5px;
+            text-align: center;
+            padding: 5%;
+            box-shadow: 0rem .2rem .2rem -.2rem hsl(0, 15%, 41%);
+        }
+        .filterTab::before {
+            content: none;
+        }
+        .filterTab::after {
+            border-radius: 500px;
+        }
+    }
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    img {
+        width: 40%;
+    }
+}
+
+.characterHeader table {
+    width: 45%;
+    height: 50vh;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.characterHeader table tbody tr{
+    padding: 0;
+    margin: 0;
+    row-gap: 0;
+    border-bottom: 1px solid black;
+    text-align: left;
+}
+
+.characterHeader table tbody td {
+    padding-left: 5%;
+}
+ 
+/*Character Body*/
+.characterBody {
+    width: 50vw;
+    .filter-tabs {
+        padding: 4%;
+        .filterTab {
+            width: fit-content;
+        }
+    }
+}

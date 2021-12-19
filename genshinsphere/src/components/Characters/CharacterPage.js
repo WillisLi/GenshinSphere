@@ -1,27 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useQueryEntityData from 'hooks/useQueryEntityData';
 import useQueryImage from 'hooks/useQueryImage';
+import useQueryImageTypes from "hooks/useQueryImageTypes";
+import Image from "components/atoms/Image";
 import Loading from "components/atoms/Loading";
-import './CharacterPage.css';
+import FilterTabs from "components/atoms/FilterTabs";
+import './CharacterPage.scss';
 
 const CharacterPage = () => {
     const { name } = useParams();
-    const { data: character, status, isLoading, error } = useQueryEntityData("characters", name);
-    const { data: characterPortrait, status: portraitStatus, isLoading: loadingPortrait} = useQueryImage("characters", name, "portrait")
+    const { data: charImgTypes, status: imgStatus, isLoading: imgListLoading } = useQueryImageTypes("characters", name)
+    const { data: character, status, isLoading } = useQueryEntityData("characters", name);
+    const [ filterType, setFilterType ] = useState('card');
+    const [ infoFilter, setInfoFilter ] = useState('combat');
     console.log(character)
 
-    if (isLoading || loadingPortrait) {
+    if (isLoading || imgListLoading) {
         return <Loading />
     }
 
+    const filterImages = event => {
+        const type = event.target.value;
+        setFilterType(`${type}`)
+    }
+
+    const filterData = event => {
+        const type = event.target.value;
+        setInfoFilter(`${type}`)
+    }
+
     return (
-        <div className = "characterPage">
-            {status === "success" && portraitStatus === "success" &&
+        <div className = "page">
+            <h1>{character.name}</h1>
+            {status === "success" && imgStatus === "success" &&
             <div className = "characterHeader">
-                <h1>{character.name}</h1>
+                 <FilterTabs filters = {charImgTypes.filter(type => type !== "icon" && type !== "side" && type !== "summon")} filterByType = {filterImages}/>
                 <div className = "details">
-                    <img className = "mainImg" src = {characterPortrait} alt = "characterPortrait"/>
+                    <Image index = {1} cat = "characters" name = {name} type = {filterType}/>
                     <table>
                         <tbody>
                             <tr>
@@ -60,10 +76,11 @@ const CharacterPage = () => {
                     </table>
                 </div>
             </div>}
-            <div className = "characterBody">
-                <div className = "combatTalents">
+            {status === "success" && <div className = "characterBody">
+                <FilterTabs filters = {["combat", "passive", "constellations"]} filterByType = {filterData}/>
+                {infoFilter === "combat" && <div className = "combatTalents">
                     <h2>Combat Talents</h2>
-                    {status === "success" && character.combatTalents.map((skill, index) => (
+                    {character.combatTalents.map((skill, index) => (
                         <div key = {index} className = "skill">
                             <h3>{skill.type + ": " + skill.title}</h3>
                             {skill.excerpt && <p style = {{margin: "2% 1%"}}>{skill.excerpt}</p>}
@@ -80,28 +97,28 @@ const CharacterPage = () => {
                             </table>
                         </div>
                     ))}
-                </div>
-                <div className = "passiveTalents">
+                </div>}
+                {infoFilter === "passive" &&<div className = "passiveTalents">
                     <h2>Passive Talents</h2>
-                    {status === "success" && character.passiveTalents.map((skill, index) => (
+                    {character.passiveTalents.map((skill, index) => (
                         <div key = {index} className = "skill">
                             <h3>{skill.title}</h3>
                             <p style = {{margin: "2% 1%"}}>Requirement: {skill.requirement}</p>
                             <p style={{whiteSpace: "pre-line"}}>{skill.description}</p>
                         </div>
                     ))}
-                </div>
-                <div className = "constellations">
+                </div>}
+                {infoFilter === "constellations" && <div className = "constellations">
                     <h2>Constellations</h2>
-                    {status === "success" && character.constellations.map((constellation, index) => (
+                    {character.constellations.map((constellation, index) => (
                         <div key = {index} className = "constellation">
                             <h3>{constellation.title}</h3>
                             <p style = {{margin: "2% 1%"}}>{constellation.unlock}</p>
                             <p style={{whiteSpace: "pre-line"}}>{constellation.description}</p>
                         </div>
                     ))}
-                </div>
-            </div>
+                </div>}
+            </div>}
         </div>
     )
 }
