@@ -21,8 +21,8 @@ This is an open-source database for mobile game, Genshin Impact. The main purpos
 - [x] add global top bar with search bar and timer
 - [x] element pages
 - [x] team suggestions
-- [ ] section character data with tabs
-- [ ] button image switcher
+- [x] section character data with tabs
+- [x] button image switcher
 - [ ] back history nav button
 - [ ] Calendar for upcoming character birthdays
 - [ ] current available domains today

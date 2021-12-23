@@ -1,32 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useQueryEntityData from 'hooks/useQueryEntityData';
-import useQueryImage from 'hooks/useQueryImage';
-import './WeaponPage.css'
-import logo from 'logo.svg'
+import useQueryImageTypes from "hooks/useQueryImageTypes";
+import FilterTabs from "components/atoms/FilterTabs";
+import Loading from "components/atoms/Loading";
+import Image from "components/atoms/Image";
+import './WeaponPage.scss'
 
 const WeaponPage = () => {
     const { name } = useParams();
     const { data: weapon, status, isLoading } = useQueryEntityData("weapons", name);
-    const { data: icon, status: iconStatus, isLoading: iconLoading} = useQueryImage("weapons", name, "icon");
+    const { data: imageTypes, status: imageStatus, isLoading: imgLoading} = useQueryImageTypes("weapons", name)
+    const [ filterType, setFilterType ] = useState('icon');
 
-    if (isLoading || iconLoading) {
-        return <div className = "loadingDiv"><img src = {logo} className = "loading" alt = "Loading..." /></div>
+    if (isLoading || imgLoading) {
+        return <Loading />
     }
 
     if (status === 'success') {
         console.log(weapon)
     }
 
+    const filterImages = event => {
+        const type = event.target.value;
+        setFilterType(`${type}`)
+    }
+
     return (
-        <div className = "weaponPage">
-            {status === "success" && iconStatus === "success" &&
-            <div className = "characterHeader">
+        <div className = "page">
             <h1>{weapon.name}</h1>
-            <div className = "details">
-                <div className = "mainImg">
-                    <img style = {weapon.rarity === 4 ? {background: 'linear-gradient(110deg, hsl(255, 100%, 70%), hsl(263, 100%, 80%))'} : {background: 'linear-gradient(110deg, hsl(37, 100%, 60%), hsl(43, 79%, 80%)'}} src = {icon} alt = "weaponIcon"/>
-                </div>
+            {status === "success" && imageStatus === "success" &&
+            <div className = "weaponHeader">
+                <FilterTabs filters = {imageTypes} filterByType = {filterImages}/>
+                <Image index = {1} cat = "weapons" name = {name} type = {filterType}/>
+                {/* <img style = {weapon.rarity === 4 ? {background: 'linear-gradient(110deg, hsl(255, 100%, 70%), hsl(263, 100%, 80%))'} : {background: 'linear-gradient(110deg, hsl(37, 100%, 60%), hsl(43, 79%, 80%)'}} src = {icon} alt = "weaponIcon"/> */}
                 <table>
                     <tbody>
                         <tr>
@@ -59,7 +66,6 @@ const WeaponPage = () => {
                         </tr>
                     </tbody>
                 </table>
-                </div>
             </div>}
         </div>
     )

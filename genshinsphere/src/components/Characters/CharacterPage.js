@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useQueryEntityData from 'hooks/useQueryEntityData';
-import useQueryImage from 'hooks/useQueryImage';
 import useQueryImageTypes from "hooks/useQueryImageTypes";
 import Image from "components/atoms/Image";
 import Loading from "components/atoms/Loading";
@@ -35,46 +34,44 @@ const CharacterPage = () => {
             <h1>{character.name}</h1>
             {status === "success" && imgStatus === "success" &&
             <div className = "characterHeader">
-                 <FilterTabs filters = {charImgTypes.filter(type => type !== "icon" && type !== "side" && type !== "summon")} filterByType = {filterImages}/>
-                <div className = "details">
-                    <Image index = {1} cat = "characters" name = {name} type = {filterType}/>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Constellation</th>
-                                <td>{character.constellation}</td>
-                            </tr>
-                            <tr>
-                                <th>Rarity</th>
-                                <td>{"★".repeat(character.rarity)}</td>
-                            </tr>
-                            <tr>
-                                <th>Birthday</th>
-                                <td>{character.birthday}</td>
-                            </tr>
-                            <tr>
-                                <th>Affiliation</th>
-                                <td>{character.affiliation}</td>
-                            </tr>
-                            <tr>
-                                <th>Nation</th>
-                                <td>{character.nation}</td>
-                            </tr>
-                            <tr>
-                                <th>Vision</th>
-                                <td>{character.vision}</td>
-                            </tr>
-                            <tr>
-                                <th>Weapon</th>
-                                <td>{character.weapon}</td>
-                            </tr>
-                            <tr>
-                                <th>Bio</th>
-                                <td>{character.description}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <FilterTabs filters = {charImgTypes.filter(type => type !== "icon" && type !== "side" && type !== "summon")} filterByType = {filterImages}/>
+                <Image index = {1} cat = "characters" name = {name} type = {filterType}/>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Constellation</th>
+                            <td>{character.constellation}</td>
+                        </tr>
+                        <tr>
+                            <th>Rarity</th>
+                            <td>{"★".repeat(character.rarity)}</td>
+                        </tr>
+                        <tr>
+                            <th>Birthday</th>
+                            <td>{character.birthday}</td>
+                        </tr>
+                        <tr>
+                            <th>Affiliation</th>
+                            <td>{character.affiliation}</td>
+                        </tr>
+                        <tr>
+                            <th>Nation</th>
+                            <td>{character.nation}</td>
+                        </tr>
+                        <tr>
+                            <th>Vision</th>
+                            <td>{character.vision}</td>
+                        </tr>
+                        <tr>
+                            <th>Weapon</th>
+                            <td>{character.weapon}</td>
+                        </tr>
+                        <tr>
+                            <th>Bio</th>
+                            <td>{character.description}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>}
             {status === "success" && <div className = "characterBody">
                 <FilterTabs filters = {["combat", "passive", "constellations"]} filterByType = {filterData}/>

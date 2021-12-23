@@ -1,0 +1,30 @@
+/*Weapon Header*/
+.weaponHeader {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    .filter-tabs {
+        flex-direction: column;
+        width: fit-content;
+        .filterTab {
+            width: 7vw;
+            font-size: 1.4rem;
+            border-radius: 5px;
+            text-align: center;
+            padding: 5%;
+            box-shadow: 0rem .2rem .2rem -.2rem hsl(0, 15%, 41%);
+        }
+        .filterTab::before {
+            content: none;
+        }
+        .filterTab::after {
+            border-radius: 500px;
+        }
+    }
+}
+
+table {
+    border: 1px solid black;
+}
