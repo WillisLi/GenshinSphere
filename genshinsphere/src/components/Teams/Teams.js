@@ -1,5 +1,6 @@
 import React from 'react'
 import { useIsFetching } from 'react-query'
+import { NavLink } from 'react-router-dom'
 import { parseString } from 'utils/utils'
 import Image from 'components/atoms/Image'
 import Loading from 'components/atoms/Loading'
@@ -22,7 +23,9 @@ const Teams = () => {
                     <div className = "team-container">
                         {["Hu Tao", "Zhongli", "Xingqiu", "Xiangling"].map((name, idx) => (
                             <div className = "units">
-                                <Image key = {idx} cat = "characters" name = {parseString(name)} type = "icon"/>
+                                <NavLink to = {`/characters/${parseString(name)}`}>
+                                    <Image key = {idx} cat = "characters" name = {parseString(name)} type = "icon"/>
+                                </NavLink>
                                 <p>{name}</p>
                             </div>
                         ))}
@@ -35,7 +38,9 @@ const Teams = () => {
                     <div className = "team-container">
                         {["Ganyu", "Venti", "Mona", "Diona"].map((name, idx) => (
                             <div className = "units">
-                                <Image key = {idx} cat = "characters" name = {parseString(name)} type = "icon"/>
+                                <NavLink to = {`/characters/${parseString(name)}`}>
+                                    <Image key = {idx} cat = "characters" name = {parseString(name)} type = "icon"/>
+                                </NavLink>
                                 <p>{name}</p>
                             </div>
                         ))}
@@ -49,7 +54,9 @@ const Teams = () => {
                     <div className = "team-container">
                         {["Eula", "Raiden Shogun", "Zhongli", "Albedo"].map((name, idx) => (
                             <div className = "units">
-                                <Image key = {idx} cat = "characters" name = {parseString(name)} type = "icon"/>
+                                <NavLink to = {`/characters/${parseString(name)}`}>
+                                    <Image key = {idx} cat = "characters" name = {parseString(name)} type = "icon"/>
+                                </NavLink>
                                 <p>{name}</p>
                             </div>
                         ))}
@@ -63,7 +70,9 @@ const Teams = () => {
                     <div className = "team-container">
                         {["Raiden Shogun", "Bennett", "Xingqiu", "Xiangling"].map((name, idx) => (
                             <div className = "units">
-                                <Image key = {idx} cat = "characters" name = {parseString(name)} type = "icon"/>
+                                <NavLink to = {`/characters/${parseString(name)}`}>
+                                    <Image key = {idx} cat = "characters" name = {parseString(name)} type = "icon"/>
+                                </NavLink>
                                 <p>{name}</p>
                             </div>
                         ))}
@@ -79,7 +88,9 @@ const Teams = () => {
                     <div className = "team-container">
                         {["Ganyu", "Venti", "Raiden Shogun", "Zhongli"].map((name, idx) => (
                             <div className = "units">
-                                <Image key = {idx} cat = "characters" name = {parseString(name)} type = "icon"/>
+                                <NavLink to = {`/characters/${parseString(name)}`}>
+                                    <Image key = {idx} cat = "characters" name = {parseString(name)} type = "icon"/>
+                                </NavLink>
                                 <p>{name}</p>
                             </div>
                         ))}

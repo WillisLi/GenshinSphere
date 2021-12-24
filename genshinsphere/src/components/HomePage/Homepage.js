@@ -7,7 +7,7 @@ import './Homepage.scss'
 import hehe from 'static/images/hehe.png'
 import heyTao from 'static/images/heyTao.png'
 import jeanTeach from 'static/images/jeanTeach.png'
-
+import map from 'static/images/map.png'
 const Homepage = () => {
     const { data: shopData, status, isLoading } = useQueryEntityData('shop', 'starglitter_exchange')
     const [currentMonth, setCurrentMonth] = useState(new Date().toLocaleString("en-US", { month: "long" }));
@@ -26,12 +26,18 @@ const Homepage = () => {
                             GenshinSphere is a fan-made project and all assets and rights belong to miHoYo Co., Ltd. This is a database for mobile game, Genshin Impact, primarily used to serve as a central hub for players to easily access useful resources related to the game.<br></br>Updates to this site are continuously being made to improve your overall user experience.
                         </p>
                     </section>
-                    <section className = "recommendations">
-                        <h2>Check out team compositions I use and recommend!</h2>
-                        <NavLink to = "/teams">
-                            <img src = {jeanTeach} alt = "jeanTeach" />
-                        </NavLink>
-                    </section>
+                    <div className = "middle">
+                        <section className = "recommendations">
+                            <h2>Check out team compositions I use and recommend!</h2>
+                            <NavLink to = "/teams">
+                                <img src = {jeanTeach} alt = "jeanTeach" />
+                            </NavLink>
+                        </section>
+                        <section className = "map">
+                            <h2>Interactive Teyvat Map</h2>
+                            <a href = "https://webstatic-sea.mihoyo.com/" target="_blank" rel="noopener noreferrer"><img src = {map} alt = "interactiveMap"/></a>
+                        </section>
+                    </div>
                 </div>
                 <div className = "side">
                     {status === 'success' && <div className = "shopSection">

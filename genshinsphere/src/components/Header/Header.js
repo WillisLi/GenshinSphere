@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import SearchBar from './SearchBar'
 import Clock from './Clock'
 import './Header.css'
@@ -7,10 +8,10 @@ import { ImSphere } from 'react-icons/im'
 const Header = () => {
     return (
         <div className = "header">
-            <div className = "logo">
+            <NavLink className = "logo" to = "/">
                 <p>GenshinSphere</p>
                 {<ImSphere style = {{fontSize: '1.6em'}}/>}
-            </div>
+            </NavLink>
             <SearchBar />
             <Clock />
         </div>

@@ -60,8 +60,11 @@ h1 {
     width: 50vw;
     .filter-tabs {
         padding: 4%;
+        width: 100%;
         .filterTab {
-            width: fit-content;
+            width: min-content;
+            padding-left: 3%;
+            padding-right: 3%;
         }
     }
 }

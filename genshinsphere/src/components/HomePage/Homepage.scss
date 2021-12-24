@@ -11,11 +11,18 @@
     flex-direction: column;
     width: 60%;
     margin-left: 3%;
+    margin-right: 3%;
     section {
         height: min-content;
         box-shadow: .2rem .2rem 1rem grey;
     }
-    /* border: 3px solid black; */
+    .middle {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5vh;
+    }
 }
 
 .side {
@@ -39,7 +46,6 @@
 .recommendations {
     width: min-content;
     padding: 0 1% 2%;
-    margin-top: 5vh;
     display: flex;
     flex-direction: column;
     h2 {
@@ -51,6 +57,29 @@
     img:hover {
         filter: drop-shadow(0 0 0.9rem gray);
         transition: filter 0.2s ease-out;
+    }
+}
+
+/*Map*/
+.map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding-bottom: 4%;
+    h2 {
+        font-size: 1.7rem;
+    }
+    a {
+        width: 75%;
+        img {
+            width: 100%;
+            border-radius: 50px;
+        }
+        img:hover {
+            filter: drop-shadow(0 0 0.9rem gray);
+            transition: filter 0.2s ease-out;
+        }
     }
 }
 
