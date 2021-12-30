@@ -27,11 +27,7 @@ const SearchBar = () => {
     }))).map(item => item.data)
 
     const isFetching = useIsFetching();
-
-    // if (isFetching === 0) {
-    //     console.log(searchList)
-    // }
-
+    
     const filterSearch = event => {
         event.preventDefault();
         const input = event.target.value;

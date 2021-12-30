@@ -31,8 +31,10 @@ const WeaponPage = () => {
             <h1>{weapon.name}</h1>
             {status === "success" && imageStatus === "success" &&
             <div className = "weaponHeader">
-                <FilterTabs filters = {imageTypes} filterByType = {filterImages}/>
-                <Image index = {1} cat = "weapons" name = {name} type = {filterType}/>
+                <div className = "imageContainer">
+                    <FilterTabs filters = {imageTypes} filterByType = {filterImages}/>
+                    <Image index = {1} cat = "weapons" name = {name} type = {filterType}/>
+                </div>
                 {/* <img style = {weapon.rarity === 4 ? {background: 'linear-gradient(110deg, hsl(255, 100%, 70%), hsl(263, 100%, 80%))'} : {background: 'linear-gradient(110deg, hsl(37, 100%, 60%), hsl(43, 79%, 80%)'}} src = {icon} alt = "weaponIcon"/> */}
                 <table>
                     <tbody>

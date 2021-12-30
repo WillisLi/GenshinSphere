@@ -72,9 +72,9 @@ const Homepage = () => {
                     </div>
                     <div className = 'youtube-embed'>
                         <p>Check out the latest Youtube Videos!</p>
-                        <iframe src="https://www.youtube.com/embed/DdCDD-Jeyl4" title = "Collected Miscellany - Gorou"></iframe>
-                        <iframe src="https://www.youtube.com/embed/3DXG7eYBTMU" title = "Collected Miscellany - Itto"></iframe>
-                        <iframe src="https://www.youtube.com/embed/iXeJ94AFZDw" title = "Character Demo - Arataki Itto"></iframe>
+                        <iframe src="https://www.youtube.com/embed/jvGnekdMOhI" title = "Character Teaser - Shenhe"></iframe>
+                        <iframe src="https://www.youtube.com/embed/_skFhoR5jYE" title = "Skins Teaser - Keqing and Ningguang"></iframe>
+                        <iframe src="https://www.youtube.com/embed/9LR1HGtpWz4" title = "2.4 Special Program"></iframe>
                     </div>
                 </div>
         </div>
