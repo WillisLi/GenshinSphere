@@ -8,8 +8,8 @@ const ElementLink = ({index, name}) => {
         <div className = "elementCard">
             {status === 'success' && <NavLink to = {`/elements/${name}`} key = {index}>
                 <img src = {data} alt = {`${name}`}/>
+                <p className = "label">{name}</p>
             </NavLink>}
-            <p className = "label">{name}</p>
         </div>
     )
 }

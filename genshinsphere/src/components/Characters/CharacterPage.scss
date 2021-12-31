@@ -13,26 +13,46 @@ h1 {
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
+    .imageContainer {
+        width: 40%;
+        border: 1px solid black;
+        img {
+            width: 100%;
+        }
+    }
     .filter-tabs {
         flex-direction: column;
         width: fit-content;
+        position: absolute;
         .filterTab {
-            width: 7vw;
-            font-size: 1.4rem;
-            border-radius: 5px;
-            text-align: center;
-            padding: 5%;
-            box-shadow: 0rem .2rem .2rem -.2rem hsl(0, 15%, 41%);
+            width: fit-content;
+            min-width: 5vw;
+            font-size: 0.8rem;
+            background:hsla(0, 16%, 77%);
+            padding: 3% 0%;
+            margin-top: 3%;
+            z-index: 99;
         }
         .filterTab::before {
-            content: none;
+            content: "";
+            position: absolute;
+            height: 50%;
+            background:hsla(0, 16%, 77%);
+            top: 0;
+            transform: skew(45deg);
+            transform-origin:top;
+            z-index: -1;
         }
         .filterTab::after {
-            border-radius: 500px;
+            content: "";
+            position: absolute;
+            height: 50%;
+            background:hsla(0, 16%, 77%);
+            bottom:0;
+            transform: skew(-45deg);
+            transform-origin:bottom;
+            z-index: -1;
         }
-    }
-    img {
-        width: 40%;
     }
 }
 

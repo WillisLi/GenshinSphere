@@ -34,8 +34,10 @@ const CharacterPage = () => {
             <h1>{character.name}</h1>
             {status === "success" && imgStatus === "success" &&
             <div className = "characterHeader">
-                <FilterTabs filters = {charImgTypes.filter(type => type !== "icon" && type !== "side" && type !== "summon")} filterByType = {filterImages}/>
-                <Image index = {1} cat = "characters" name = {name} type = {filterType}/>
+                <div className = "imageContainer">
+                    <FilterTabs filters = {charImgTypes.filter(type => type !== "icon" && type !== "side" && type !== "summon")} filterByType = {filterImages}/>
+                    <Image index = {1} cat = "characters" name = {name} type = {filterType}/>
+                </div>
                 <table>
                     <tbody>
                         <tr>
