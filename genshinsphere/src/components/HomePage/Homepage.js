@@ -26,6 +26,12 @@ const Homepage = () => {
                             GenshinSphere is a fan-made project and all assets and rights belong to miHoYo Co., Ltd. This is a database for mobile game, Genshin Impact, primarily used to serve as a central hub for players to easily access useful resources related to the game.<br></br>Updates to this site are continuously being made to improve your overall user experience.
                         </p>
                     </section>
+                    <section className = "about" style = {{"margin-top": "3%"}}>
+                        <h2>Notice</h2>
+                        <p>
+                            Genshinsphere is currently undergoing a transition from moving styles to Tailwind CSS. I'm not satisfied with the way the site looks aesthetic wise, so expect an overhaul sometime in the future.
+                        </p>
+                    </section>
                     <div className = "middle">
                         <section className = "recommendations">
                             <h2>Check out team compositions I use and recommend!</h2>
@@ -72,9 +78,9 @@ const Homepage = () => {
                     </div>
                     <div className = 'youtube-embed'>
                         <p>Check out the latest Youtube Videos!</p>
-                        <iframe src="https://www.youtube.com/embed/jvGnekdMOhI" title = "Character Teaser - Shenhe"></iframe>
-                        <iframe src="https://www.youtube.com/embed/_skFhoR5jYE" title = "Skins Teaser - Keqing and Ningguang"></iframe>
-                        <iframe src="https://www.youtube.com/embed/9LR1HGtpWz4" title = "2.4 Special Program"></iframe>
+                        <iframe src="https://www.youtube.com/embed/EiAhMr6IJTQ" title = "Story Teaser: The Divine Damsel"></iframe>
+                        <iframe src="https://www.youtube.com/embed/UJ7NrBAKtAA" title = "Collected Miscellany - Yunjin"></iframe>
+                        <iframe src="https://www.youtube.com/embed/2ERPBlS-0Is" title = "Collected Miscellany - Shenhe"></iframe>
                     </div>
                 </div>
         </div>
