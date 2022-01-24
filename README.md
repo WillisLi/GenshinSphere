@@ -1,7 +1,7 @@
 # GenshinSphere 🌍
-This is an open-source database for mobile game, Genshin Impact. The main purpose of this application is to serve as a quick and easy reference for game data and redirect to other resources that may be useful to a user.
 
-**Styling is still development, building out components right now.**
+**Genshinsphere has transitioned to a different repository and this repo is no longer being updated. It will be archived.**
+This is an open-source database for mobile game, Genshin Impact. The main purpose of this application is to serve as a quick and easy reference for game data and redirect to other resources that may be useful to a user.
 
 # Todo List
 - [x] Create character list page
